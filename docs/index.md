@@ -1,5 +1,5 @@
 # **Bienvenue sur notre documentation**
-*Ce site repertorie tous les cours nécessaires*
+*Ce site repertorie tous les cours nécessaires et documentation*
 
 
 
@@ -9,15 +9,19 @@
 | Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
 | Aligné à gauche  | centré          |    Aligné à droite | ``` 
+ 
 
 
-## Project layout
+## Introduction 
+ 172.28.0-31.0/19
+
+
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-Salut !
+
 
 
 
