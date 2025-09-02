@@ -4,7 +4,7 @@
 
 
 ## Commandes
-| Commande  | Signification          | Commentaire |
+| Commandes | Signification          | Commentaires |
 |:-|:-:|-:|
 | Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
