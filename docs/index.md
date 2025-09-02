@@ -1,17 +1,21 @@
 # **Bienvenue sur notre documentation**
-*Ce site repertorie tous les cours nécessaires*
+*Ce site repertorie tous les cours nécessaires et documentation*
 
 
 
 ## Commandes
-| Commande  | Signification          | Commentaire |
+| Commandes | Signification          | Commentaires |
 |:-|:-:|-:|
 | Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
 | Aligné à gauche  | centré          |    Aligné à droite | ``` 
+ 
 
 
-## Project layout
+## Introduction 
+
+
+
 
     mkdocs.yml    # The configuration file.
     docs/
