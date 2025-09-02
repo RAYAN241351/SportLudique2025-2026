@@ -5,3 +5,4 @@ theme:
   hljs_languages:
     - yaml
     - rust
+color_mode: dark
