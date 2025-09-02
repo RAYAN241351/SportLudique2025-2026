@@ -1,7 +1,12 @@
 site_name: My Docs
 theme:
   name: material
+  language: fr
   highlightjs: true
   hljs_languages:
     - yaml
     - rust
+  
+  features:
+    - navigation.tabs
+
