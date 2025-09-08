@@ -1,17 +1,6 @@
 # **Bienvenue sur notre documentation**
 *Ce site repertorie tous les cours nécessaires et documentation*
 
-
-
-## Commandes
-| Commandes | Signification          | Commentaires |
-|:-|:-:|-:|
-| Aligné à gauche  |   ce texte        |  Aligné à droite |
-| Aligné à gauche  | est             |   Aligné à droite |
-| Aligné à gauche  | centré          |    Aligné à droite | ``` 
- 
-
-
 ## Introduction 
 
 
@@ -19,8 +8,10 @@
 
     mkdocs.yml    # The configuration file.
     docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        index.md  # .
+        configuration-réseau.md # Répertorie toutes les ips prises
+        etapes.md # Les étapes de la mise en place du switch coeur de réseau
+        outils.md
 
 
 
