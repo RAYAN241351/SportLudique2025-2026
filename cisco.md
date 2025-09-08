@@ -1,2 +1,2 @@
-# management vlan 110 ip 172.16.0.1/24
+# management vlan 110 ip 192.168.110.1/24
 nom du domain Bourges.local
