@@ -38,3 +38,13 @@ Renommer le
 *ip address ip_cisco masque* 
 # Enregistrer la configuration
 *write memory*
+# Configuration côté Switch Cisco 9200L
+interface range gigabitEthernet 1/0/23 - 24
+ channel-group 1 mode active
+ no shutdown
+
+ interface Port-channel1
+ description LACP vers Routeur 1900
+ switchport mode trunk 
+ switchport trunk allowed vlan all
+ no shutdown
