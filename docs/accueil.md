@@ -9,4 +9,6 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 ### Nous sommes en groupe de 2 personnes:
 - *Amine Khemiri*
-- *Rayan Rouis* 
+- *Rayan Rouis*
+
+
