@@ -7,3 +7,6 @@ ce projet est essentiel car il figure dans la notation de notre épreuve finale.
 
 Cette documentation repertorie toutes les modifications, les choix entrepris, ainsi que toutes les contraintes rencontrées et les solutions de celles-ci
 
+###Le Projet a été sous forme de groupe de deux:
+- *Amine Khemiri*
+- *Rayan Rouis* 
