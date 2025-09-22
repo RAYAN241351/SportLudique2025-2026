@@ -7,3 +7,12 @@
 | RAID 5 | 3          | ✅ Oui     | (N-1)/N           | 👍 Bonne        | ✅ 1 disque                  |
 | RAID 6 | 4          | ✅✅ Oui   | (N-2)/N           | 👌 Correcte     | ✅ 2 disques                 |
 | RAID 10 | 4 (paire) | ✅ Oui     | 50%               | 🔥 Excellente   | ✅ 1 disque/paire (min 2)    |
+
+
+# Configuration SWITCH-SALLE-SERVEUR 
+### Interface pour le LACP:
+| Interface GigabitEthernet1/0/23-24|
+|-----------------------------------|
+| switchport mode trunk             |
+| channel-group 1 mode active       |
+| no shutdown                        |
