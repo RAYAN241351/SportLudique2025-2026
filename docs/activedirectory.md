@@ -3,4 +3,5 @@
 
 ## Installation des roles nécessaires
 <img width="781" height="553" alt="image" src="https://github.com/user-attachments/assets/56af54e4-825e-44dd-b73c-ba475afd2528" />
+
 -*Essentiel de prendre la première option car elle permet de créer un serveur en ajoutant des roles, des services de role et des fonctionnalités*
