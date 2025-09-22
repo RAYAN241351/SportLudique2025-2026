@@ -1,23 +1,14 @@
-# **Bienvenue sur notre documentation**
-*Ce site repertorie tous les cours nécessaires*
+# Bienvenue sur la documentation de Sport Ludique Orléans  Année scolaire 2025-2026
 
 
+## Contexte 
+Dans le cadre de notre formation dans le BTS SIO en SISR (Solution d'Infrastructure et Systèmes et Réseaux), Nous avons comme tache de créer une infrastructure réseau complète,
+ce projet est essentiel car il figure dans la notation de notre épreuve finale.
 
-## Commandes
-| Commande  | Signification          | Commentaire |
-|:-|:-:|-:|
-| Aligné à gauche  |   ce texte        |  Aligné à droite |
-| Aligné à gauche  | est             |   Aligné à droite |
-| Aligné à gauche  | centré          |    Aligné à droite | ``` 
+Cette documentation repertorie toutes les modifications, les choix entrepris, ainsi que toutes les contraintes rencontrées et les solutions de celles-ci
 
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
+### Nous sommes en groupe de 2 personnes:
+- *Amine Khemiri*
+- *Rayan Rouis*
 
 
