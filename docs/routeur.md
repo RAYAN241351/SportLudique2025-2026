@@ -1,4 +1,4 @@
-# Reinitialisation du routeur CISCO et Configuration du routeur CISCO
+## Reinitialisation du routeur CISCO et Configuration du routeur CISCO
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/87d30af4-26a9-4365-9322-a27d3f34a118" />
 
 
@@ -31,7 +31,7 @@
 - *login local*
 - *transport input ssh*
 
-# <p align="center">Configuration des interfaces réseau</p>
+## <p align="center">Configuration des interfaces réseau</p>
 <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/0e3b59af-9c27-4530-a9e2-d913e3ee79c3" />
 
 ## Interface vers le fournisseur d'accès
@@ -53,7 +53,7 @@
 | ip nat inside |
 
 
-# Routage (Route par défaut, NAT-PAT, ACL)
+## Routage (Route par défaut, NAT-PAT, ACL)
 <img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/16fe2fab-ca7d-40e1-a5d5-53327da81ae8" />
 
 
