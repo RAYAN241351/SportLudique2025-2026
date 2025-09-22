@@ -1,5 +1,5 @@
 # Reinitialisation du routeur CISCO et Configuration du routeur CISCO
-![A mushroom-head robot drinking bubble tea]([https://raw.githubusercontent.com/Codecademy/docs/main/media/codey.jpg](https://www.objetconnecte.com/wp-content/uploads/2021/01/Cisco-logo.jpg))
+!(https://www.objetconnecte.com/wp-content/uploads/2021/01/Cisco-logo.jpg)
 
 
 
