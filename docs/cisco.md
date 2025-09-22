@@ -1,43 +1,59 @@
-nom du domain Bourges.local
-# Créer le VLAN 110 et passer le port en mode access et l'assigner à ce VLAN (qui sera utilisé pour configurer le switch)
-*config*
-*vlan database* 
-*vlan 110* 
-*end*
-*config*
-*int*
-*switchport mode access*
-*switchport access vlan*
-*no shut*
-# Assigner le nom Management au vlan 110
-*configure terminal*
-*vlan 110*
-*name Management*
-# Assigner l'adresse ip au VLAN 110 
-*ip address ip_cisco masque* 
-# Enregistrer la configuration
-*write memory*
-# Configuration côté Switch Cisco 9200L
-interface range gigabitEthernet 1/0/23 - 24
- channel-group 1 mode active
- no shutdown
+```bash
+! -------------------------------------------------
+!  Création du VLAN 110 pour la gestion
+! -------------------------------------------------
 
- interface Port-channel1
- description LACP vers Routeur 1900
- switchport mode trunk 
- switchport trunk allowed vlan all
- no shutdown
- 
- # Mettre en place un relais dhcp sur un switch
- ip routing
+vlan 110
+    name Management
+exit
 
-    Crée la SVI pour le VLAN 211 (si ce n’est pas déjà fait) :
+interface range GigabitEthernet1/0/1
+    switchport mode access
+    switchport access vlan 110
+    no shutdown
+exit
 
+! Donner une IP à la SVI du VLAN 110 (interface virtuelle)
+interface Vlan110
+    ip address [IP_CISCO] [MASQUE]
+    no shutdown
+exit
+
+! -------------------------------------------------
+!  Enregistrement de la configuration
+! -------------------------------------------------
+
+write memory
+
+! -------------------------------------------------
+!  Configuration d’un EtherChannel en LACP (Cisco 9200L)
+! -------------------------------------------------
+
+interface range GigabitEthernet1/0/23 - 24
+    channel-group 1 mode active
+    no shutdown
+exit
+
+interface Port-channel1
+    description LACP vers Routeur 1900
+    switchport mode trunk
+    switchport trunk allowed vlan all
+    no shutdown
+exit
+
+! -------------------------------------------------
+!  Activer le routage IP sur le switch
+! -------------------------------------------------
+
+ip routing
+
+! -------------------------------------------------
+!  DHCP Relay (relais DHCP) sur VLAN 211
+! -------------------------------------------------
+
+! Créer la SVI pour le VLAN 211 (si non existante)
 interface Vlan211
- ip address 192.168.211.1 255.255.255.0
- no shutdown
-
-    Ajoute la configuration du relais DHCP sur la SVI :
-
-interface Vlan211
- ip helper-address 192.168.210.10
+    ip address 192.168.211.1 255.255.255.0
+    ip helper-address 192.168.210.10
+    no shutdown
+exit
