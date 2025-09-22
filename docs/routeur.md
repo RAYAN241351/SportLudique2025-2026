@@ -1,37 +1,3 @@
-
-1. [Réinitialisation du routeur Cisco](#réinitialisation-du-routeur-cisco)  
-   1.1. [Réinitialisation avec *confreg*](#1-appuyer-simultanément-sur-la-touche-ctrl--pause)  
-   1.2. [Sauvegarde et reset (ROMMON MODE)](#2-enregistrer-la-running-config-en-ayant-fait-des-modifications-et-reset-le-routeur-rommon-mode)  
-   1.3. [Chargement de la configuration sauvegardée](#3-de-nouveau-sur-le-mode-rommon-on-modifie-le-registre-qui-charge-la-configuration-enregistrée-en-mémoire)  
-2. [Configuration de base du routeur Cisco](#configuration-de-base-du-routeur-cisco)  
-   2.1. [Renommer le routeur](#1-renommer-le-routeur)  
-   2.2. [Créer un utilisateur administrateur](#2-créer-un-utilisateur-avec-privilèges-admin)  
-   2.3. [Activer le SSH sur les lignes VTY](#3-activer-le-login-via-ssh-sur-les-lignes-vty)  
-3. [Configuration des interfaces réseau](#configuration-des-interfaces-réseau)  
-   3.1. [Interface vers le fournisseur d’accès](#interface-vers-le-fournisseur-daccès)  
-   3.2. [Interface vers le réseau local (VLANs)](#interface-vers-le-réseau-local-vlans-configurés)  
-   3.3. [Interface VLAN 210 (exemple)](#interface-vlan-210-ex--réseau-utilisateur)  
-4. [Routage](#routage)  
-   4.1. [Route par défaut vers le FAI](#1-route-par-défaut-vers-le-fai)  
-5. [Configuration du NAT](#configuration-du-nat)  
-   5.1. [ACL pour NAT](#1-acl-pour-nat-autorise-les-hôtes-lan-à-sortir)  
-   5.2. [Activation du NAT avec surcharge (PAT)](#2-activer-le-nat-avec-surcharge-pat)  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Reinitialisation du routeur CISCO et Configuration du routeur CISCO
 <img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/bae53d48-ddf7-4060-bdc2-7d8e9a99dfb8" />
 
