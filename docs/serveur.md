@@ -1,5 +1,8 @@
 
-# Résumé du RAID
+# Serveur Virtual Machine + Solution RAID
+<img width="1688" height="1126" alt="image" src="https://github.com/user-attachments/assets/7fa6c3e7-5089-418d-9a88-afec60008c17" />
+
+## Résumé du RAID
 | RAID | Min. Disques | Redondance | Capacité utile    | Performance     | Tolérance aux pannes         |
 |------|--------------|------------|-------------------|-----------------|------------------------------|
 | RAID 0 | 2          | ❌ Non     | 100%              | 🔥 Excellente   | ❌ Aucune (perte totale)     |
@@ -9,7 +12,7 @@
 | RAID 10 | 4 (paire) | ✅ Oui     | 50%               | 🔥 Excellente   | ✅ 1 disque/paire (min 2)    |
 
 
-# Configuration SWITCH-SALLE-SERVEUR 
+## Configuration SWITCH-SALLE-SERVEUR 
 ### Configuration de LACP (EtherChannel) sur 2 ports:
 | Interface GigabitEthernet1/0/23-24|
 |-----------------------------------|
