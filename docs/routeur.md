@@ -18,7 +18,7 @@
 - ***Enlever le cordon d'alimentation et le remettre dedans***  
 
 
-## Configuration de base du routeur Cisco
+# Configuration de base du routeur Cisco
 
 
 ## 1. Renommer le routeur
@@ -32,7 +32,7 @@
 - *login local*
 - *transport input ssh*
 
-## <p align="center">Configuration des interfaces réseau</p>
+# <p align="center">Configuration des interfaces réseau</p>
 <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/0e3b59af-9c27-4530-a9e2-d913e3ee79c3" />
 
 #### Interface vers le fournisseur d'accès
@@ -54,7 +54,7 @@
 | ip nat inside |
 
 
-## Routage
+# Routage
 <img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/16fe2fab-ca7d-40e1-a5d5-53327da81ae8" />
 
 
