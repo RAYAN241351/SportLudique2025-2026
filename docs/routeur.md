@@ -55,19 +55,20 @@
 
 
 ### Routage
+<img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/16fe2fab-ca7d-40e1-a5d5-53327da81ae8" />
 
 
- #### Route par défaut vers le FAI
+ #### 1. Route par défaut vers le FAI
 - *ip route 0.0.0.0 0.0.0.0 183.x.x.x*
 
 
 ### Configuration du NAT
 
 
-#### ACL pour NAT (autorise les hôtes LAN à sortir)
+#### 1. ACL pour NAT (autorise les hôtes LAN à sortir)
 - *access-list 1 permit 172.x.x.x 0.0.0.255*
 
-#### Activer le NAT avec surcharge (PAT)
+#### 2. Activer le NAT avec surcharge (PAT)
 - *ip nat inside source list 1 interface GigabitEthernet0/0 overload*
 
 
