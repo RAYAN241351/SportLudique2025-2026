@@ -57,3 +57,27 @@ interface Vlan211
     ip helper-address 192.168.210.10
     no shutdown
 exit
+
+
+! -------------------------------------------------
+!  Configuration de LACP (EtherChannel) sur 2 ports
+! -------------------------------------------------
+
+interface range GigabitEthernet1/0/23 - 24
+ switchport mode trunk
+ channel-group 1 mode active
+ no shutdown
+exit
+
+interface Port-channel1
+ description LACP vers Routeur 1900
+ switchport mode trunk
+ switchport trunk allowed vlan all
+ no shutdown
+exit
+
+! -------------------------------------------------
+! 🛣️ Ajouter une route par défaut
+! -------------------------------------------------
+
+ip route 0.0.0.0 0.0.0.0 172.x.x.x
