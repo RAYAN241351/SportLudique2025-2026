@@ -17,7 +17,7 @@
 - ***Enlever le cordon d'alimentation et le remettre dedans***  
 
 
-# Configuration de base du routeur Cisco
+## Configuration de base du routeur Cisco
 
 
 ## Renommer le routeur
