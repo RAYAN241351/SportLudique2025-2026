@@ -31,13 +31,15 @@
 - *login local*
 - *transport input ssh*
 
-### | Configuration des interfaces réseau |
+### Configuration des interfaces réseau
+
+#### Interface vers le fournisseur d'accès
+| interface GigabitEthernet0/0|
 | ------------ |
+| ip address 192.x.x.x 255.x.x.x|
+| ip nat outside  |
 
-Configuration des interfaces réseau
 
-
-!  Interface vers le fournisseur d'accès
 interface GigabitEthernet0/0
     ip address 192.x.x.x 255.x.x.x
     ip nat outside
