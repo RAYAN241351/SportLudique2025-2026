@@ -7,12 +7,17 @@ vlan 110
     name Management
 exit
 
-interface range GigabitEthernet1/0/1
+interface GigabitEthernet1/0/1
     switchport mode access
     switchport access vlan 110
     no shutdown
 exit
 
+interface GigabitEthernet1/0/1
+    switchport mode trunk
+    switchport trunk allowed vlan all
+    no shutdown
+exit
 ! Donner une IP à la SVI du VLAN 110 (interface virtuelle)
 interface Vlan110
     ip address [IP_CISCO] [MASQUE]
@@ -87,7 +92,6 @@ ip route 0.0.0.0 0.0.0.0 172.x.x.x
 ! -------------------------------------------------
 
 username operateur privilege 15 secret [motdepasse]
-username Bourges privilege 15 secret [motdepasse]
 
 ! -------------------------------------------------
 ! 🔐 Activer SSH et accès distant
@@ -99,9 +103,6 @@ line vty 0 4
  login local
  transport input ssh
 !
-line vty 5 15
+line vty 0 15
  login local
  transport input ssh
-!
-line con 0
- login local
