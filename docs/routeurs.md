@@ -1,5 +1,5 @@
-# Reinitialisation du routeur CISCO en premier lieu 
-<img width="1200" height="794" alt="image" src="https://github.com/user-attachments/assets/bae53d48-ddf7-4060-bdc2-7d8e9a99dfb8" />
+# Reinitialisation du routeur CISCO
+<img width="1100" height="600" alt="image" src="https://github.com/user-attachments/assets/bae53d48-ddf7-4060-bdc2-7d8e9a99dfb8" />
 
 
 
