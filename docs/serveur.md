@@ -10,9 +10,16 @@
 
 
 # Configuration SWITCH-SALLE-SERVEUR 
-### Interface pour le LACP:
+### Configuration de LACP (EtherChannel) sur 2 ports:
 | Interface GigabitEthernet1/0/23-24|
 |-----------------------------------|
 | switchport mode trunk             |
 | channel-group 1 mode active       |
 | no shutdown                        |
+
+|interface Port-channel1|
+|-----------------------| 
+| description LACP vers Switch Coeur|
+| switchport mode trunk             |
+| switchport trunk allowed vlan all |
+| no shutdown                       |
