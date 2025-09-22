@@ -3,7 +3,7 @@
 
 
 
-## 1. Appuyer simultanément sur la touche *CTRL* + *PAUSE*
+### 1. Appuyer simultanément sur la touche *CTRL* + *PAUSE*
 - *confreg 0x2142*
 - *reset*
 
