@@ -3,11 +3,11 @@
 
 
 
-## 1.Appuyer simultanément sur la touche *CTRL* + *PAUSE*
+## 1. Appuyer simultanément sur la touche *CTRL* + *PAUSE*
 - *confreg 0x2142*
 - *reset*
 
-### Enregistrer la config-running(*copy running-config startup-config*) et *reset* le routeur (ROMMON MODE)
+### 2. Enregistrer la config-running(*copy running-config startup-config*) et *reset* le routeur (ROMMON MODE)
 - *confreg 0x2102
 
 
