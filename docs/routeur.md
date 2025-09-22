@@ -33,7 +33,7 @@
 - *transport input ssh*
 
 ### <p align="center">Configuration des interfaces réseau</p>
-<img width="900" height="500" alt="image" src="https://github.com/user-attachments/assets/0e3b59af-9c27-4530-a9e2-d913e3ee79c3" />
+<img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/0e3b59af-9c27-4530-a9e2-d913e3ee79c3" />
 
 #### Interface vers le fournisseur d'accès
 | interface GigabitEthernet0/0|
