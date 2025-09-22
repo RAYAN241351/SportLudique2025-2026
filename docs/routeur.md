@@ -19,7 +19,7 @@
 
 # Configuration de base du routeur Cisco
 
-1. ## Renommer le routeur
+1. ##### Renommer le routeur
 - *hostname Bourges-routeur*
 
 ### Créer un utilisateur avec privilèges admin
