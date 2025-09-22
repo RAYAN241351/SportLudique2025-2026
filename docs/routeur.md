@@ -18,7 +18,7 @@
 - *Enlever le cordon d'alimentation et le remettre dedans*  
 
 
-# Configuration de base du routeur Cisco
+## Configuration de base du routeur Cisco
 
 ## 4.Renommer le routeur
 - *hostname Bourges-routeur*
