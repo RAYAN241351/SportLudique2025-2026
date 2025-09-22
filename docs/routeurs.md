@@ -7,8 +7,8 @@
 - *confreg 0x2142*
 - *reset*
 
-### 2. Enregistrer la config-running en ayant fait des modifications et *reset* le routeur (ROMMON MODE)
-- *hostname Routeur-bourges-fibre*
+### 2. Enregistrer la running-config en ayant fait des modifications et *reset* le routeur (ROMMON MODE)
+- *hostname Routeur-bourges-fibre (exemple)*
 - *copy running-config startup-config*
 - *reset*
   
