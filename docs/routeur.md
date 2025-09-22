@@ -17,26 +17,25 @@
 - ***Enlever le cordon d'alimentation et le remettre dedans***  
 
 
+# Configuration de base du routeur Cisco
 
-```bash
-! -------------------------------------------------
-!  Configuration de base du routeur Cisco
-! -------------------------------------------------
 
-!  Renommer le routeur
-hostname Bourges-routeur
+### 1. Renommer le routeur
+- *hostname Bourges-routeur*
 
-!  Créer un utilisateur avec privilèges admin
-username user privilege 15 secret motdepasse
+### 2. Créer un utilisateur avec privilèges admin
+- *username user privilege 15 secret motdepasse*
 
-!  Activer le login via SSH sur les lignes VTY
-line vty 0 4
-    login local
-    transport input ssh
+### 3. Activer le login via SSH sur les lignes VTY
+- *line vty 0 4*
+- *login local*
+- *transport input ssh*
 
-! -------------------------------------------------
-!   Configuration des interfaces réseau
-! -------------------------------------------------
+### | Configuration des interfaces réseau |
+| ------------ |
+
+Configuration des interfaces réseau
+
 
 !  Interface vers le fournisseur d'accès
 interface GigabitEthernet0/0
