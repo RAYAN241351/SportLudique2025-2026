@@ -6,6 +6,9 @@
 
 - *Essentiel de prendre la première option car elle permet de créer un serveur en ajoutant des roles, des services de role et des fonctionnalités*
 
+<img width="1023" height="718" alt="image" src="https://github.com/user-attachments/assets/7c51c0df-441f-4979-9fbc-0d11f4088d01" />
+
+
 <img width="1029" height="721" alt="image" src="https://github.com/user-attachments/assets/df0fa77e-7511-4483-8c33-8a634f296e25" />
 
 - *Nous installons les services essentiels pour Ad-Directory, DHCP, DNS, Controlleur de domaine*
