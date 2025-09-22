@@ -81,3 +81,27 @@ exit
 ! -------------------------------------------------
 
 ip route 0.0.0.0 0.0.0.0 172.x.x.x
+
+! -------------------------------------------------
+! 🔐 Comptes utilisateurs
+! -------------------------------------------------
+
+username operateur privilege 15 secret [motdepasse]
+username Bourges privilege 15 secret [motdepasse]
+
+! -------------------------------------------------
+! 🔐 Activer SSH et accès distant
+! -------------------------------------------------
+
+ip ssh version 2
+
+line vty 0 4
+ login local
+ transport input ssh
+!
+line vty 5 15
+ login local
+ transport input ssh
+!
+line con 0
+ login local
