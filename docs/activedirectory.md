@@ -13,3 +13,9 @@
 
 - *Nous installons les services essentiels pour Ad-Directory, DHCP, DNS, Controlleur de domaine*
 
+## Configuration DHCP (exemple d'un réseau)
+
+## 1.Création de l'étendue 
+<img width="515" height="428" alt="image" src="https://github.com/user-attachments/assets/f35a4e8c-67d0-434a-9bd3-5d9986dec978" />
+
+-*Nous avons juste besoin de renseigner l'IP du début et l'ip de fin qui vont etre assigner aux futures ordinateurs du réseau et et ainsi le masque en décimale et en CIDR*
