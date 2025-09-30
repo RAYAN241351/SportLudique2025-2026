@@ -27,7 +27,7 @@
 
 
 Lors de l’installation du serveur, il est essentiel de sélectionner l’option permettant **l’ajout de rôles**, **services de rôle** et **fonctionnalités**.
-*Ceci permet d’installer les **services fondamentaux** :
+Ceci permet d’installer les **services fondamentaux** :
 
 - **Active Directory Domain Services (AD DS)**
 
