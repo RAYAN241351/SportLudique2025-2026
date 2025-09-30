@@ -4,6 +4,22 @@
 ## Installation des roles nécessaires
 <img width="781" height="553" alt="image" src="https://github.com/user-attachments/assets/56af54e4-825e-44dd-b73c-ba475afd2528" />
 
+<img width="783" height="558" alt="image (5)" src="https://github.com/user-attachments/assets/91b33381-3692-4272-aa6f-7b314872e48b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <img width="1023" height="718" alt="image" src="https://github.com/user-attachments/assets/7c51c0df-441f-4979-9fbc-0d11f4088d01" />
 
@@ -20,6 +36,14 @@
 - **DNS Server**
 
 - **Contrôleur de domaine**
+
+
+<img width="1029" height="721" alt="image (6)" src="https://github.com/user-attachments/assets/15018e94-d84a-4ea6-9183-0f52c9b0e0c3" />
+*Les fonctionnalités nécessaires sont sélectionnées automatiquement par l’assistant, il n’est donc pas nécessaire de les modifier.*
+
+
+
+
 
 ## Configuration DHCP (exemple d'un réseau)
 *le DHCP permet **d’attribuer automatiquement** des adresses IP aux ordinateurs du réseau.*
