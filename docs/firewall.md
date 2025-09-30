@@ -111,5 +111,6 @@ Dans la section **Plan d’adressage**, la configuration est identique à celle 
 En sélectionnant **IP fixe (statique)**, il sera possible d’ajouter une adresse IP sous la forme :  
 `IP/masque`
 
-![Uploading image.png…]()
+<img width="916" height="320" alt="image" src="https://github.com/user-attachments/assets/a240981d-f3db-4e72-be87-f7d521363c5c" />
+
 
