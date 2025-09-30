@@ -39,6 +39,7 @@
 
 
 <img width="1029" height="721" alt="image (6)" src="https://github.com/user-attachments/assets/15018e94-d84a-4ea6-9183-0f52c9b0e0c3" />
+
 *Les fonctionnalités nécessaires sont sélectionnées automatiquement par l’assistant,il n’est donc pas nécessaire de les modifier.*
 
 
