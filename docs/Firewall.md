@@ -53,3 +53,53 @@ La modification du mot de passe administrateur se fait dans :
 **Configuration → Système → Administrateurs → Onglet "Compte ADMIN"**
 
 ### Image 5
+
+## Création d'interfaces
+
+### Configuration d'une interface physique
+
+Pour configurer une interface physique, rendez-vous dans :  
+**Configuration → Réseau → Interfaces**
+
+Sélectionnez ensuite l’interface de votre choix :
+
+- **in** → Interface LAN (interne au réseau)  
+- **out** → Interface WAN (externe, vers le routeur ou Internet)  
+- **DMZ** → Zone démilitarisée
+
+Après avoir sélectionné une interface, il faut **la sortir du mode bridge** en cochant la case **Adressage dynamique/statique**.  
+Choisissez ensuite un mode d’adressage :
+- **Statique** : vous entrez manuellement l’adresse IP.  
+- **Dynamique (DHCP)** : l’adresse IP est attribuée automatiquement.
+
+### Image 6
+
+---
+
+### Configuration d'une interface virtuelle (VLAN)
+
+Pour créer une interface virtuelle (VLAN), procédez comme suit :
+
+1. Dans une interface physique, cliquez sur le bouton **Ajouter** (en haut de la liste).  
+2. Choisissez **VLAN → "nom de l’interface"**.
+
+### Image 7
+
+Une page de configuration apparaît.  
+Dans la section **Configuration générale**, remplissez les informations du VLAN :
+
+- **Nom** : nom du VLAN  
+- **Interface parente** : interface physique à laquelle le VLAN est rattaché  
+- **Identifiant** : ID du VLAN  
+- **Interface interne/externe** : à définir selon le rôle du réseau
+
+### Image 8
+
+Dans la section **Plan d’adressage**, la configuration est identique à celle d’une interface physique :  
+- Sortez du mode *bridge*  
+- Choisissez le mode **Dynamique** ou **Statique**
+
+En sélectionnant **IP fixe (statique)**, il sera possible d’ajouter une adresse IP sous la forme :  
+`IP/masque`
+
+### Image 9
