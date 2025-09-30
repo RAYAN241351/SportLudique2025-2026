@@ -70,8 +70,8 @@
 
 
 
-- *Renseigner **l’adresse IP de début** et **l’adresse IP de fin**.*
-- *Définir le **masque de sous-réseau** (**notation décimale** ou **CIDR**).*
+- *Renseigner **l’adresse IP de début** et **l’adresse IP de fin***.
+- *Définir le **masque de sous-réseau** (**notation décimale** ou **CIDR**)*.
 
 
 
@@ -96,7 +96,7 @@
 
 
 
-- *Définir la **durée du bail DHCP**, c’est-à-dire **le temps pendant lequel un client peut utiliser une adresse IP attribuée.***
+- *Définir la **durée du bail DHCP**, c’est-à-dire **le temps pendant lequel un client peut utiliser une adresse IP attribuée***.
 
 
 
@@ -108,7 +108,7 @@
 
 
 
-- *Ajouter **l’adresse IP de la passerelle par défaut** (souvent l’IP du routeur).* 
+- *Ajouter **l’adresse IP de la passerelle par défaut** (souvent l’IP du routeur)*. 
 
 
 
