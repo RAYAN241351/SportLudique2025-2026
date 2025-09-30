@@ -119,7 +119,7 @@
 
 
 
-- *Indiquer le **nom du serveur DNS** (ex. : domaine.local).**
+- *Indiquer le **nom du serveur DNS** (ex. : domaine.local).*
 - *Tester la **résolution DNS** avec l’option **“Résoudre”** afin de vérifier que **l’Active Directory est bien joignable***.
 
 
