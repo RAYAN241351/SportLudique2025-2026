@@ -6,7 +6,7 @@
 
 <img width="783" height="558" alt="image (5)" src="https://github.com/user-attachments/assets/91b33381-3692-4272-aa6f-7b314872e48b" />
 
-*On selectionne le bon serveur avec le bon nom et la bonne adresse IP configurée précédemment et on clique sur **SUIVANT***
+- On selectionne le bon serveur avec le bon nom et la bonne adresse IP configurée précédemment et on clique sur **SUIVANT**
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-*Lors de l’installation du serveur, il est essentiel de sélectionner l’option permettant **l’ajout de rôles, services de rôle et fonctionnalités**.*
-*Ceci permet d’installer les services fondamentaux :*
+*Lors de l’installation du serveur, il est essentiel de sélectionner l’option permettant **l’ajout de rôles**, **services de rôle** et **fonctionnalités**.*
+*Ceci permet d’installer les **services fondamentaux** :*
 
 - **Active Directory Domain Services (AD DS)**
 
@@ -70,8 +70,8 @@
 
 
 
-- *Renseigner **l’adresse IP de début** et **l’adresse IP de fin***.
-- *Définir le **masque de sous-réseau** (**notation décimale** ou **CIDR**)*.
+- *Renseigner* **l’adresse IP de début** *et* **l’adresse IP de fin**.
+- *Définir le* **masque de sous-réseau** (**notation décimale** *ou* **CIDR**).
 
 
 
@@ -83,7 +83,7 @@
 
 
 
-- *Possibilité **d’exclure certaines adresses IP** (ex. : celles d’un routeur, d’un serveur ou d’un autre équipement fixe).*
+- *Possibilité* **d’exclure certaines adresses IP** (*ex* : *celles d’un routeur, d’un serveur ou d’un autre équipement fixe*).
 
 
 
@@ -96,7 +96,7 @@
 
 
 
-- *Définir la **durée du bail DHCP**, c’est-à-dire **le temps pendant lequel un client peut utiliser une adresse IP attribuée***.
+- *Définir la* **durée du bail DHCP**,*c’est-à-dire* **le temps pendant lequel un client peut utiliser une adresse IP attribuée**.
 
 
 
@@ -108,7 +108,7 @@
 
 
 
-- *Ajouter **l’adresse IP de la passerelle par défaut** (souvent l’IP du routeur)*. 
+- *Ajouter* **l’adresse IP de la passerelle par défaut** (*souvent l’IP du routeur*). 
 
 
 
@@ -119,8 +119,8 @@
 
 
 
-- *Indiquer le **nom du serveur DNS** (ex. : domaine.local).*
-- *Tester la **résolution DNS** avec l’option **“Résoudre”** afin de vérifier que **l’Active Directory est bien joignable***.
+- *Indiquer le* **nom du serveur DNS** (*ex. : domaine.local*).
+- *Tester la* **résolution DNS** *avec l’option* **“Résoudre”** *afin de vérifier que* **l’Active Directory est bien joignable**.
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-- *Possibilité **d’activer immédiatement l’étendue**, ou de la **laisser inactive pour une utilisation future.***
+- *Possibilité* **d’activer immédiatement l’étendue**, *ou de la* **laisser inactive pour une utilisation future.**
 
 
 
