@@ -1,7 +1,5 @@
-```bash
-! -------------------------------------------------
-!  Création du VLAN 110 pour la gestion
-! -------------------------------------------------
+## Création du VLAN 110 pour la gestion
+
 
 vlan 110
     name Management
@@ -24,15 +22,15 @@ interface Vlan110
     no shutdown
 exit
 
-! -------------------------------------------------
-!  Enregistrement de la configuration
-! -------------------------------------------------
+
+## Enregistrement de la configuration
+ 
 
 write memory
 
-! -------------------------------------------------
-!  Configuration d’un EtherChannel en LACP (Cisco 9200L)
-! -------------------------------------------------
+ 
+  ## Configuration d’un EtherChannel en LACP (Cisco 9200L)
+
 
 interface range GigabitEthernet1/0/23 - 24
     channel-group 1 mode active
@@ -46,17 +44,16 @@ interface Port-channel1
     no shutdown
 exit
 
-! -------------------------------------------------
-!  Activer le routage IP sur le switch
-! -------------------------------------------------
+ 
+  ## Activer le routage IP sur le switch
+ 
 
 ip routing
 
-! -------------------------------------------------
-!  DHCP Relay (relais DHCP) sur VLAN 211
-! -------------------------------------------------
 
-! Créer la SVI pour le VLAN 211 (si non existante)
+ DHCP Relay (relais DHCP) sur VLAN 211
+
+Créer la SVI pour le VLAN 211 (si non existante)
 interface Vlan211
     ip address 192.168.211.1 255.255.255.0
     ip helper-address 192.168.210.10
@@ -64,10 +61,8 @@ interface Vlan211
 exit
 
 
-! -------------------------------------------------
-!  Configuration de LACP (EtherChannel) sur 2 ports
-! -------------------------------------------------
 
+ Configuration de LACP (EtherChannel) sur 2 ports
 interface range GigabitEthernet1/0/23 - 24
  switchport mode trunk
  channel-group 1 mode active
@@ -81,23 +76,20 @@ interface Port-channel1
  no shutdown
 exit
 
-! -------------------------------------------------
-! 🛣️ Ajouter une route par défaut
-! -------------------------------------------------
+
+ ## Ajouter une route par défaut
 
 ip route 0.0.0.0 0.0.0.0 172.x.x.x
 
-! -------------------------------------------------
-! 🔐 Comptes utilisateurs
-! -------------------------------------------------
 
+ ## Comptes utilisateurs
+ 
 username operateur privilege 15 secret [motdepasse]
 
-! -------------------------------------------------
-! 🔐 Activer SSH et accès distant
-! -------------------------------------------------
 
-ip ssh version 2
+ ## Activer SSH et accès distant
+ 
+ ip ssh version 2
 
 line vty 0 4
  login local
