@@ -6,7 +6,7 @@
 
 <img width="783" height="558" alt="image (5)" src="https://github.com/user-attachments/assets/91b33381-3692-4272-aa6f-7b314872e48b" />
 
-
+*On selectionne le bon serveur avec le bon nom et la bonne adresse IP configurée précédemment et on clique sur **SUIVANT***
 
 
 
