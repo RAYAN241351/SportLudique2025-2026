@@ -13,6 +13,12 @@
 
 
 
-## 
+## C
 
-`test`
+`view "interne" {
+     match-clients { localhost; 172.28.128.
+
+
+
+
+`
