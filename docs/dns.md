@@ -15,10 +15,28 @@
 
 ## C
 
-`view "interne" {
-     match-clients { localhost; 172.28.128.
+view "interne" {
+     match-clients { localhost; 172.28.128.0/24; };
+     recursion yes;
+     zone "bourges.sportludique.fr" {
+     type master;
+     file "/etc/bind/db.interne";
+     };
+};
+
+view "externe" {
+     match-clients {any;};
+     recursion no;
+     zone "bourges.sportludique.fr" {
+     type master;
+     file "/etc/bind/db.externe";
+     };
+};
+
+     
 
 
 
 
-`
+
+
