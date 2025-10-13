@@ -47,3 +47,11 @@ forward-zone:
 ```
 sudo systemctl restart unbound
 ```
+## Pour vérifier le fonctionnement de la configuration, tester une résolution depuis le serveur
+```
+dig @127.0.0.1 www.google.com
+```
+## Puis faire le test sur un poste externe (machine windows)
+```
+nslookup www.google.com 192.168.x.x
+```
