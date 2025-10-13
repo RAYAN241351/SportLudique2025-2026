@@ -1,5 +1,7 @@
 ## installation de Unbound sous debian
 
+<img width="1040" height="549" alt="image" src="https://assets.techrepublic.com/uploads/2022/06/how-to-install-unbound-dns.jpeg"/>
+
 installer les paquet
 
 ```
@@ -51,7 +53,9 @@ sudo systemctl restart unbound
 ```
 dig @127.0.0.1 www.google.com
 ```
-## Puis faire le test sur un poste externe (machine windows)
+## Puis faire le test sur un poste externe 
+
+**machine windows**
 ```
 nslookup www.google.com 192.168.x.x
 ```
