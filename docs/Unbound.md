@@ -6,7 +6,7 @@ installer les paquet
 sudo apt update
 sudo apt install unbound
 ```
-### Créez ou modifiez le fichier de configuration principal :
+## Créez ou modifiez le fichier de configuration principal :
 
 ```
 sudo nano /etc/unbound/unbound.conf.d/custom.conf
@@ -42,3 +42,8 @@ forward-zone:
         name: "bourge.sportludique.fr"
         forward-addr: 172.28.128.70
  ```
+## redémarrer unbound après avoir modifier la configuration
+
+```
+sudo systemctl restart unbound
+```
