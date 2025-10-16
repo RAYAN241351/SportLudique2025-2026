@@ -1,4 +1,4 @@
-# Documentation du projet CHARTRES - SportLudique 2025-2026
+# Documentation du projet BOURGES - SportLudique 2025-2026
 
 Bienvenue dans la documentation du projet **Bourges - SportLudique 2025-2026**.  
 Ce projet utilise **MkDocs** avec le thème **Material** pour générer une documentation technique claire et bien organisée. 
