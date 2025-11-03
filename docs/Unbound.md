@@ -102,7 +102,7 @@ forward-zone:
        # forward-addr: 172.28.128.2
  
 forward-zone:
-        name: "bourge.sportludique.fr"
+        name: "bourges.sportludique.fr"
         forward-addr: 172.28.128.70
  ```
 ## redémarrer unbound après avoir modifier la configuration
