@@ -51,11 +51,11 @@ Email Address
 Note : Ici, le certificat de la CA est signé par lui-même, mais il servira à signer les certificats des serveurs.
 
 ## Création du certificat serveur via la CA
-géneration de la clé privée du serveur:
+### géneration de la clé privée du serveur:
 ```
 openssl genrsa 2048 > ~/tpssl/siteweb/keys/siteweb.key
 ```
-Création de la demande de certificat (CSR) :
+### Création de la demande de certificat (CSR) :
 ```
 openssl req -new -key ~/tpssl/siteweb/keys/siteweb.key \
   -out ~/tpssl/siteweb/requests_certificats/siteweb.csr \
@@ -64,3 +64,4 @@ openssl req -new -key ~/tpssl/siteweb/keys/siteweb.key \
 Remplir les informations demandées, le Common Name doit correspondre au domaine du site.
 
 Assurez-vous que le fichier de config OpenSSL contient la section subjectAltName pour SAN.
+###
