@@ -1,3 +1,5 @@
+# Partie serveur d'autorité de sertification (openssl)
+
 ## Mise a jour du systeme
 
 Nous ferons toute les manipulation sur un machine virtuel sous debian
@@ -50,7 +52,14 @@ Email Address
 
 Note : Ici, le certificat de la CA est signé par lui-même, mais il servira à signer les certificats des serveurs.
 
-## Création du certificat serveur via la CA
+## Création du 
+
+    La clé privée de la CA reste sur la VM CA.
+
+    Tous les certificats serveurs doivent être signés par cette CA pour être reconnus comme valides par le reverse proxy ou les clients internes.
+
+    Cette méthode évite les certificats auto-signés côté serveur, le serveur web utilise un certificat signé par la CA interne.
+certificat serveur via la CA
 ### géneration de la clé privée du serveur:
 ```
 openssl genrsa 2048 > ~/tpssl/siteweb/keys/siteweb.key
@@ -89,3 +98,13 @@ scp ~/tpssl/autorite/certificats/ca.crt operateur@IP_SERVEUR:/etc/ssl/monsite/
 ```
 
 `IP_SERVEUR` : IP de la VM Apache2 ou Nginx.
+Ces fichiers seront utilisés par le serveur pour sécuriser le site via TLS.
+
+## Notes importantes
+La clé privée de la CA **reste sur la VM CA**.
+
+Tous les certificats serveurs doivent être signés par cette CA pour être reconnus comme valides par le reverse proxy ou les clients internes.
+
+Cette méthode **évite les certificats auto-signés côté serveur**, le serveur web utilise un certificat signé par la CA interne.
+
+# Partie serveur web (Apache2)
