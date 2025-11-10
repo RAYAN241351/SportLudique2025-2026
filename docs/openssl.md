@@ -149,6 +149,13 @@ sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-availab
 ```
 ### Remarques :
 
-SSLCertificateChainFile contient le certificat de la CA.
+`SSLCertificateChainFile` contient le certificat de la CA.
 
-ServerName doit correspondre exactement au CN du certificat.
+`ServerName` doit correspondre exactement au CN du certificat.
+
+## Test du site HTTPS
+
+### Depuis le serveur ou un client du réseau interne :
+```
+curl -vk https://www.bourges.sportludique.fr
+```
