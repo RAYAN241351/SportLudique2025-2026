@@ -88,7 +88,4 @@ scp ~/tpssl/siteweb/keys/siteweb.key operateur@IP_SERVEUR:/etc/ssl/monsite/
 scp ~/tpssl/autorite/certificats/ca.crt operateur@IP_SERVEUR:/etc/ssl/monsite/
 ```
 
-
-    'IP_SERVEUR' : IP de la VM Apache2 ou Nginx.
-
-    Ces fichiers seront utilisés par le serveur pour sécuriser le site via TLS.
+`IP_SERVEUR` : IP de la VM Apache2 ou Nginx.
