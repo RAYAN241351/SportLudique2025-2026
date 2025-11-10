@@ -108,3 +108,47 @@ Tous les certificats serveurs doivent être signés par cette CA pour être reco
 Cette méthode **évite les certificats auto-signés côté serveur**, le serveur web utilise un certificat signé par la CA interne.
 
 # Partie serveur web (Apache2)
+
+## installation
+```
+sudo a2enmod ssl
+```
+/etc/ssl/monsite/
+├── siteweb.crt       # Certificat du serveur signé par la CA
+├── siteweb.key       # Clé privée du serveur
+└── ca.crt            # Certificat de la CA
+
+## Configuration du site sécurisé
+
+### Copier le fichier de configuration SSL par défaut :
+```
+sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/monsite.conf
+```
+### Modifier le fichier /etc/apache2/sites-available/monsite.conf :
+```
+<IfModule mod_ssl.c>
+    <VirtualHost *:443>
+        ServerAdmin admin@monsite.local
+        ServerName www.bourges.sportludique.fr
+        DocumentRoot /var/www/html
+
+        SSLEngine on
+        SSLCertificateFile      /etc/ssl/monsite/siteweb.crt
+        SSLCertificateKeyFile   /etc/ssl/monsite/siteweb.key
+        SSLCertificateChainFile /etc/ssl/monsite/ca.crt
+
+        <Directory /var/www/html>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+</IfModule>
+```
+### Remarques :
+
+SSLCertificateChainFile contient le certificat de la CA.
+
+ServerName doit correspondre exactement au CN du certificat.
