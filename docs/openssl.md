@@ -64,4 +64,31 @@ openssl req -new -key ~/tpssl/siteweb/keys/siteweb.key \
 Remplir les informations demandées, le Common Name doit correspondre au domaine du site.
 
 Assurez-vous que le fichier de config OpenSSL contient la section subjectAltName pour SAN.
-###
+### Signature de la demande par la CA :
+```
+openssl x509 -req \
+  -in ~/tpssl/siteweb/requests_certificats/siteweb.csr \
+  -CA ~/tpssl/autorite/certificats/ca.crt \
+  -CAkey ~/tpssl/autorite/keys/private_ca.key \
+  -CAcreateserial \
+  -out ~/tpssl/siteweb/certificats/siteweb.crt \
+  -days 365 \
+  -extfile ~/tpssl/openssl-site.cnf -extensions v3_req
+```
+Le certificat serveur est maintenant signé par la CA.
+
+### Vérification: 
+```
+openssl x509 -in ~/tpssl/siteweb/certificats/siteweb.crt -text -noout
+```
+## Partage des certificats sur le serveur web
+```
+scp ~/tpssl/siteweb/certificats/siteweb.crt operateur@IP_SERVEUR:/etc/ssl/monsite/
+scp ~/tpssl/siteweb/keys/siteweb.key operateur@IP_SERVEUR:/etc/ssl/monsite/
+scp ~/tpssl/autorite/certificats/ca.crt operateur@IP_SERVEUR:/etc/ssl/monsite/
+```
+
+
+    'IP_SERVEUR' : IP de la VM Apache2 ou Nginx.
+
+    Ces fichiers seront utilisés par le serveur pour sécuriser le site via TLS.
