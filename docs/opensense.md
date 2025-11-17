@@ -1,10 +1,10 @@
-##📘 Documentation OPNsense
+## 📘 Documentation OPNsense
 <img width="600" height="400" alt="opnsense-logo-vector-removebg-preview" src="https://github.com/user-attachments/assets/85dd3415-b10b-4fa0-9fb7-532366d5280c" />
 
 
 
 Architecture – Interfaces – Routage – NAT – Notes importantes
-##🧩1.Présentation générale
+## 🧩1.Présentation générale
 
 Ce système OPNsense joue le rôle de pare-feu et passerelle dans une architecture comprenant plusieurs réseaux :
 
@@ -20,14 +20,14 @@ Il assure :
 ✔ une règle NAT interne anti-lockout
 ✔ la gestion de plusieurs passerelles
 
-##🌐2.Interfaces configurées
-##2.1 Interface LAN
+## 🌐2.Interfaces configurées
+## 2.1 Interface LAN
 
 Nom : LAN
 Adresse IP : 192.168.110.98
 Rôle : Interface de gestion (accès GUI OPNsense)
 
-##2.2 Interface WAN
+## 2.2 Interface WAN
 
 Nom : WAN
 Adresse IP : 192.168.18.2
@@ -42,7 +42,7 @@ Nom : OPT1
 Adresse IP : 172.28.159.126 /25
 
 
-🚦 3. Routage
+## 🚦 3. Routage
 
 Les routes configurées dans Système → Routes → Configuration sont les suivantes :
 
@@ -80,7 +80,7 @@ Utilisée pour :
 ✔ route par défaut
 ✔ réseaux 172.28.129.0/24 et 172.28.128.0/24
 
-##5.2 Passerelle Switch Core
+## 5.2 Passerelle Switch Core
 IP : 172.28.159.1
 Interface : OPT1
 
