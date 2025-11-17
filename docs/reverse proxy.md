@@ -1,6 +1,6 @@
 # Reverse Proxy – Nginx
 
-<img src="https://thumbnail.imgbin.com/19/14/14/nginx-logo-GZFpkBSz_t.jpg" width="700">
+<img src="https://w7.pngwing.com/pngs/816/934/png-transparent-nginx-hd-logo-thumbnail.png" width="700">
 
 
 Documentation de configuration – Projet HTTPS / Certificat CA interne
