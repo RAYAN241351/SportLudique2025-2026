@@ -1,6 +1,6 @@
 # Reverse Proxy – Nginx
 
-<img src="https://kinsta.com/fr/wp-content/uploads/sites/4/2019/01/qu-est-ce-que-nginx-1024x512.png" width="300">
+<img src="https://kinsta.com/fr/wp-content/uploads/sites/4/2019/01/qu-est-ce-que-nginx-1024x512.png" width="700">
 
 
 Documentation de configuration – Projet HTTPS / Certificat CA interne
