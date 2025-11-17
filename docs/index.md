@@ -1,4 +1,4 @@
-# Bienvenue sur la documentation de Sport Ludique Orléans  Année scolaire 2025-2026
+# Bienvenue sur la documentation de Sport Ludique Bourges  Année scolaire 2025-2026
 
 
 ## Contexte 
@@ -11,4 +11,14 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 - *Amine Khemiri*
 - *Rayan Rouis*
 
+### Notre topologie Réseau
 
+
+
+### Physique
+<img width="672" height="766" alt="image" src="https://github.com/user-attachments/assets/58b096e3-242f-4ae7-b106-139de62bb39a" />
+
+
+
+### Logique
+<img width="801" height="680" alt="image" src="https://github.com/user-attachments/assets/2b723b42-1ba0-43fa-8eaf-fa4ff8f6315d" />
