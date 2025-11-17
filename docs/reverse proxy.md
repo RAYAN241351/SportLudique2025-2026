@@ -53,7 +53,7 @@ server {
 
     server_name www.bourges.sportludique.fr;
 
-    # Certificats SSL signés par la CA interne
+    # ** Certificats SSL signés par la CA interne **
     ssl_certificate /etc/ssl/monsite/siteweb.crt;
     ssl_certificate_key /etc/ssl/monsite/siteweb.key;
     ssl_trusted_certificate /etc/ssl/monsite/ca.crt;
