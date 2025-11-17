@@ -33,3 +33,48 @@ appliquer des règles de sécurité (SSL, en-têtes, etc.)
         [Serveur Web Apache HTTPS]
               192.168.18.90
 ```
+
+## Certificats utilisés sur le reverse proxy
+
+Les certificats ont été copiés depuis la VM CA vers le reverse proxy dans :
+
+```
+/etc/ssl/monsite/
+├── siteweb.crt   → Certificat du site signé par la CA
+├── siteweb.key   → Clé privée du site
+└── ca.crt        → Certificat de l'autorité (CA)
+```
+
+## Voici le fichier de configurations dedié au site internet de l'infrastructure : 
+```
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name www.bourges.sportludique.fr;
+
+    # Certificats SSL signés par la CA interne
+    ssl_certificate /etc/ssl/monsite/siteweb.crt;
+    ssl_certificate_key /etc/ssl/monsite/siteweb.key;
+    ssl_trusted_certificate /etc/ssl/monsite/ca.crt;
+
+    # Sécurité SSL
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    location / {
+        # Backend Apache sécurisé
+        proxy_pass https://192.168.18.90;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Le backend utilise un certificat signé par ta CA → tu peux vérifier si tu veux
+        proxy_ssl_verify off;
+        # proxy_ssl_trusted_certificate /etc/ssl/monsite/ca.crt;
+    }
+}
+```
