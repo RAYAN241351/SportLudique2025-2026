@@ -116,3 +116,10 @@ Ports à transférer vers le reverse proxy :
 |Port	|Protocole	|Destination interne|
 |80	|TCP	|Reverse Proxy|
 |443	|TCP	Reverse Proxy|
+
+| Commande  | Signification          | Commentaire |
+|:-|:-:|-:|
+| Aligné à gauche  |   ce texte        |  Aligné à droite |
+| Aligné à gauche  | est             |   Aligné à droite |
+| Aligné à gauche  | centré          |    Aligné à droite | ``` 
+
