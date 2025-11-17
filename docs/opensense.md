@@ -1,5 +1,5 @@
 ##📘 Documentation OPNsense
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/cd774e01-3a08-459a-bacd-25d0584004ae" />
+<img width="600" height="400" alt="opnsense-logo-vector-removebg-preview" src="https://github.com/user-attachments/assets/85dd3415-b10b-4fa0-9fb7-532366d5280c" />
 
 
 
