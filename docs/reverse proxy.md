@@ -90,3 +90,29 @@ server {
     return 301 https://$host$request_uri;
 }
 ```
+## Activation du site
+```
+sudo ln -s /etc/nginx/sites-available/Bourges /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+## Vérifier Nginx
+
+```
+sudo nginx -t
+sudo systemctl status nginx
+```
+
+## Vérifier HTTPS depuis l’extérieur
+```
+curl -I https://www.bourges.sportludique.fr
+```
+
+Rappel : configuration NAT/PAT sur le routeur
+Ports à transférer vers le reverse proxy :
+
+|Port	|Protocole	|Destination interne|
+|80	|TCP	|Reverse Proxy|
+|443	|TCP	Reverse Proxy|
