@@ -1,4 +1,4 @@
-<img src="https://cms.therecord.media/uploads/format_webp/2022_11_MOSHED_2022_11_1_15_21_50_3f34936f86.jpg" width="800">
+<img src="https://www.linuxadictos.com/wp-content/uploads/OpenSSL_logo.svg.png" width="800">
 
 # Partie serveur d'autorité de certification (openssl)
 
