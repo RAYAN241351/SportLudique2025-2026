@@ -16,3 +16,26 @@ Le site est hébergé dans le répertoire Apache par défaut :
 ├── index.html
 └── images/
 ```
+## Configuration VirtualHost du site (HTTPS)
+
+### Le VirtualHost HTTPS du site se trouve dans :
+
+```
+/etc/apache2/sites-available/bourges.conf
+```
+exemple de configuration d'un site : 
+```
+
+```
+
+## Activation du site
+
+### Activer le module SSL
+```
+sudo a2enmod ssl
+```
+### Activer le VirtualHost
+```
+sudo a2ensite bourges.conf
+sudo systemctl restart apache2
+```
