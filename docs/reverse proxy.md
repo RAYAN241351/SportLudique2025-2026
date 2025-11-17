@@ -113,13 +113,8 @@ curl -I https://www.bourges.sportludique.fr
 Rappel : configuration NAT/PAT sur le routeur
 Ports à transférer vers le reverse proxy :
 
-|Port	|Protocole	|Destination interne|
-|80	|TCP	|Reverse Proxy|
-|443	|TCP	Reverse Proxy|
-
-| Commande  | Signification          | Commentaire |
+| port  | protocole          | destination interne |
 |:-|:-:|-:|
-| Aligné à gauche  |   ce texte        |  Aligné à droite |
-| Aligné à gauche  | est             |   Aligné à droite |
-| Aligné à gauche  | centré          |    Aligné à droite | ``` 
+| 80  |   TCP        |  reverse proxy |
+| 443  | TCP            |   reverse proxy |``` 
 
