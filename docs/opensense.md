@@ -103,10 +103,3 @@ Interface : OPT1
         |   Firewall Stormshield |
         |    192.168.18.1        |
         +------------------------+
-
-
-
-
-Passerelle associée : Passerelle-SW-CORE – 172.28.159.1
-
-Rôle : Interconnexion vers le Switch Core (réseau interne étendu).
