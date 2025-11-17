@@ -47,16 +47,21 @@ Les routes configurées dans Système → Routes → Configuration sont les suiv
 |172.28.129.0/24|	Passerelle-Stormshield (192.168.18.1)|	Client|	Oui/Non (à préciser)|
 |172.28.128.0/24|	Passerelle-Stormshield (192.168.18.1)|	Serveur|	Oui/Non (à préciser)|
 |0.0.0.0/0|	Passerelle-Stormshield (192.168.18.1)|	Route par défaut|	✔ activée|
+
+
 ## Signification:
 - La route par défaut envoie tout le trafic vers le Stormshield.
 
 - Deux réseaux internes 172.28.128.0/24 et 172.28.129.0/24 sont atteints via cette même passerelle.
+
+
 
 ## Pare-feu: NAT: Redirection de port 
 
 |Interface LAN | Proto | Adresse | Ports | Adresse | Ports | IP | Ports | Description|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |LAN|TCP|*|*|LAN adresse| 80,443|*|*|Règle anti-Lockout|
+
 - Cette règle empêche de te verrouiller en bloquant l’accès à l’interface Web (HTTP/HTTPS) depuis le LAN.
 - HTTP (80)
 - HTTPS (443)
@@ -86,8 +91,8 @@ Interface : OPT1
         +----------v-----------+
         |       OPNsense       |
         |-----------------------|
-LAN ----| 192.168.110.98        |
-WAN ----| 192.168.18.2          |
+        | 192.168.110.98 -> LAN |
+        | 192.168.18.2   -> WAN |
         +----------+------------+
                    |
         +----------v-----------+
