@@ -10,17 +10,9 @@ Il héberge notre site interne sécurisé `www.bourges.sportludique.fr`.
 
 ## 2. Arborescence des fichiers liés au site web
 
-```text
-~/tpssl/
-├── siteweb
-│   ├── certificats
-│   │   └── siteweb.crt         # Certificat signé par la CA
-│   ├── keys
-│   │   └── privatekey.key      # Clé privée du site web
-│   └── requests_certificats
-│       └── demande.csr         # CSR généré pour le site web
-└── autorite
-    ├── certificats
-    │   └── ca.crt              # Certificat de la CA
-    └── keys
-        └── private_ca.key      # Clé privée de la CA
+Le site est hébergé dans le répertoire Apache par défaut :
+```
+/var/www/html/
+├── index.html
+└── images/
+```
