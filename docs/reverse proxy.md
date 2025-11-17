@@ -53,7 +53,7 @@ server {
 
     server_name www.bourges.sportludique.fr;
 
-    # ** Certificats SSL signés par la CA interne **
+    # Certificats SSL signés par la CA interne
     ssl_certificate /etc/ssl/monsite/siteweb.crt;
     ssl_certificate_key /etc/ssl/monsite/siteweb.key;
     ssl_trusted_certificate /etc/ssl/monsite/ca.crt;
@@ -76,5 +76,17 @@ server {
         proxy_ssl_verify off;
         # proxy_ssl_trusted_certificate /etc/ssl/monsite/ca.crt;
     }
+}
+```
+
+## Redirection HTTP → HTTPS
+```
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name www.bourges.sportludique.fr bourges.sportludique.fr;
+
+    return 301 https://$host$request_uri;
 }
 ```
