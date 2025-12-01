@@ -80,3 +80,39 @@ smtp IN A 183.44.18.1
 
  
 ```
+
+## configuration du routeur cisco
+
+### Commandes a ajouter :
+
+```
+ip nat inside source static tcp 192.168.18.102 25 interface GigabitEthernet0/0 25
+ip nat inside source static tcp 192.168.18.102 465 interface GigabitEthernet0/0 465
+ip nat inside source static tcp 192.168.18.102 587 interface GigabitEthernet0/0 587
+ip nat inside source static tcp 192.168.18.102 143 interface GigabitEthernet0/0 143
+ip nat inside source static tcp 192.168.18.102 993 interface GigabitEthernet0/0 993
+```
+
+## Installation de Hmail sous windows
+
+après avoir installer hmail sur le web il faut également installer framework sinon l'installation ne fonctionnera pas
+
+## Configuration de hmail
+
+### Lancer Hmail server et mettre le nom de domaine
+
+capture1
+
+### mettre les protocoles nécessaires (dans notre cas on utilise smtp pour envoyer des mails et imap pour en recevoir)
+
+capture2
+
+## Résolution du méssage "MX lookup failed: name not resolved" dans les logs
+
+ Le DNS interne ne retournait pas correctement smtp.bourges.sportludique.fr
+ problème corrigé en ajoutant dans le serveur d'autorité (interne):
+
+ ```
+ smtp IN CNAME mail
+mail IN A 192.168.18.102
+```
