@@ -9,9 +9,9 @@
 | routeur cisco  | 172.28.159.254             |   cisco 1921 |
 | serveur mail  | 192.168.18.102          |    hmail server | ``` 
 
-## Configuration DNS interne sur le serveur d'autorité
+## Configuration DNS interne et externe sur le serveur d'autorité
 
-### fichier de zone : `/etc/bind/zones/db.bourges.sportludique.fr`
+### fichier de zone : `/etc/bind/db.interne`
 ```
 $TTL 86400
 @   IN SOA ns1.bourges.sportludique.fr. admin.bourges.sportludique.fr. (
@@ -37,4 +37,46 @@ imap IN CNAME mail
 ; MX
 @    IN MX 10 smtp.bourges.sportludique.fr.
 
+```
+## Configuration DNS interne sur le serveur d'autorité
+
+### fichier de zone : `/etc/bind/db.externe`
+
+```
+$TTL 86400
+
+@   IN SOA ns1.bourges.sportludique.fr. admin.bourges.sportludique.fr. (
+
+       2025112516 ; Serial (AAAAMMJJNN)
+
+       3600       ; Refresh
+
+       1800       ; Retry
+
+       1209600    ; Expire
+
+       86400 )    ; Minimum TTL
+ 
+; Serveur DNS
+
+@    IN NS ns1.bourges.sportludique.fr.
+
+ns1  IN A 183.44.18.1
+ 
+; Domaine principal et services web
+
+@    IN A 183.44.18.1
+
+www  IN A 183.44.18.1
+ 
+; Serveur de messagerie unique
+
+smtp IN A 183.44.18.1
+ 
+ 
+; Enregistrement MX pointant vers le serveur mail
+
+@    IN MX 10 smtp.bourges.sportludique.fr.
+
+ 
 ```
