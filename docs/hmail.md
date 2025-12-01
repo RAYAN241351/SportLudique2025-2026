@@ -1,4 +1,4 @@
-<img src="https://data.ictjournal.ch/styles/np8_full/s3/media/2018/04/13/gmail-1162901_960_720.png?itok=WOPojcG3" width="800">
+<img src="https://theglobalsolutions.net/doc/images/dochmailserver.png" width="800">
 
 ## Infrastructure des équipement important
 
