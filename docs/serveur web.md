@@ -23,7 +23,7 @@ Le site est hébergé dans le répertoire Apache par défaut :
 ```
 /etc/apache2/sites-available/bourges.conf
 ```
-exemple de configuration d'un site : 
+Configuration du site de Bourges : 
 ```
 
 ```
