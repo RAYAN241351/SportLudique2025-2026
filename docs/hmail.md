@@ -1,4 +1,4 @@
-<img src="https://theglobalsolutions.net/doc/images/dochmailserver.png" width="800">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhGIt-LJ0HHVtW9KLymtCv3Db32CJVLV5I_ywXU6FcKn5pWS97_LKoHS6wECqPF25IQ&usqp=CAU" width="800">
 
 ## Infrastructure des équipement important
 
