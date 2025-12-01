@@ -16,7 +16,7 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 
 ### Physique
-<img width="672" height="766" alt="image" src="https://github.com/user-attachments/assets/58b096e3-242f-4ae7-b106-139de62bb39a" />
+<img width="845" height="759" alt="image" src="https://github.com/user-attachments/assets/18e1b0df-a62c-4e5c-be24-e06a9d41208b" />
 
 
 
