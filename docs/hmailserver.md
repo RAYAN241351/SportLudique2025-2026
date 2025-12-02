@@ -111,7 +111,17 @@ ip nat inside source static tcp 192.168.18.102 993 interface GigabitEthernet0/0 
 ### Protocoles nécessaires au bon fonctionnement de hMailServer (SMTP: Envoyer des mails, IMAP: Recevoir des mails)
 
 <img width="218" height="80" alt="image" src="https://github.com/user-attachments/assets/9b145f9b-eb48-4576-b1c9-9ddce05a4a01" />
+
+
+
+
+
+
 <img width="612" height="325" alt="image" src="https://github.com/user-attachments/assets/12fe3dcd-ccff-4153-90d9-3bea2617adc3" />
+
+
+
+
 <img width="635" height="337" alt="image" src="https://github.com/user-attachments/assets/866b7b1a-76bc-40cf-a5a9-4e328c2af01e" />
 
 
