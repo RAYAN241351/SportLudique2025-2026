@@ -3,7 +3,7 @@
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhGIt-LJ0HHVtW9KLymtCv3Db32CJVLV5I_ywXU6FcKn5pWS97_LKoHS6wECqPF25IQ&usqp=CAU" width="800">
 
-## Infrastructure des équipement important
+## Infrastructure des équipements importants
 
 | Service  | Adresse IP         | Logiciel |
 |:-|:-:|-:|
@@ -84,9 +84,9 @@ smtp IN A 183.44.18.1
  
 ```
 
-## configuration du routeur cisco
+## Règles obligatoires sur R1-FIBRE et R2-ADSL
 
-### Commandes a ajouter :
+### Règles à mettre en place :
 
 ```
 ip nat inside source static tcp 192.168.18.102 25 interface GigabitEthernet0/0 25
@@ -96,12 +96,12 @@ ip nat inside source static tcp 192.168.18.102 143 interface GigabitEthernet0/0 
 ip nat inside source static tcp 192.168.18.102 993 interface GigabitEthernet0/0 993
 ```
 
-## Installation de Hmail sous windows
+## Installation de HmailServer sous windows
 - [Hmail](https://www.hmailserver.com/download)
 
 - [Framework](https://www.microsoft.com/fr-fr/download/details.aspx?id=6041)
 
-## Configuration de hmail
+## Configuration de HmailServer
 
 ### Lancement Hmailserver et renseigner le nom de domaine correspondant au votre 
 
@@ -142,7 +142,7 @@ ip nat inside source static tcp 192.168.18.102 993 interface GigabitEthernet0/0 
 
 
 ## Partie Thunderbird
-
+    
     - Tout d’abord, installer Thunderbird puis cliquer sur « Configurer une adresse de messagerie » avec une adresse créée sur hMailServer sous Windows.
 
     - Sélectionner votre compte, puis appuyer sur Continuer.
