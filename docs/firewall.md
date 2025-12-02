@@ -114,3 +114,5 @@ En sélectionnant **IP fixe (statique)**, il sera possible d’ajouter une adres
 <img width="916" height="320" alt="image" src="https://github.com/user-attachments/assets/a240981d-f3db-4e72-be87-f7d521363c5c" />
 
 
+## ACL
+<img width="1647" height="171" alt="image" src="https://github.com/user-attachments/assets/e49048f5-c38b-4392-8c8d-16e7da3576d2" />
