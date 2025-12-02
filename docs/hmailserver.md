@@ -41,9 +41,7 @@ imap IN CNAME mail
 @    IN MX 10 smtp.bourges.sportludique.fr.
 
 ```
-## Configuration DNS interne sur le serveur d'autorité
-
-### fichier de zone : `/etc/bind/db.externe`
+### fichier de zone : `/etc/bind/db.externe`Serveur entrant
 
 ```
 $TTL 86400
