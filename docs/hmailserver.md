@@ -159,11 +159,8 @@ ip nat inside source static tcp 192.168.18.102 993 interface GigabitEthernet0/0 
 <img width="445" height="342" alt="image" src="https://github.com/user-attachments/assets/119c0780-a196-4fc1-bebe-bbb777d2487e" />
 
     Protocole : IMAP
-
     Nom d’hôte : .domain.tld (votre propre domaine avec un « . » au début)
-Capture d’écran du 2025-12-02 11-50-58
     Port : 143
-
     Nom d’utilisateur : nom@nomdedomaine.fr
 
 ### Serveur sortant
@@ -171,9 +168,7 @@ Capture d’écran du 2025-12-02 11-50-58
 <img width="419" height="266" alt="image" src="https://github.com/user-attachments/assets/aa2f69f1-70d8-404f-8d88-9ef6311e28dc" />
 
     Nom d’hôte : .domain.tld (votre propre domaine avec un « . » au début)
-
     Port : 25 (SMTP)
-
     Nom d’utilisateur : nom@nomdedomaine.fr (créé précédemment sur hMailServer)
 
 Ensuite, cliquer sur **Terminer** : la connexion devrait fonctionner si la configuration du serveur est correcte.
@@ -181,5 +176,4 @@ Ensuite, cliquer sur **Terminer** : la connexion devrait fonctionner si la confi
 ### Interface graphique après connexion réussie
 <img width="909" height="961" alt="image" src="https://github.com/user-attachments/assets/cef76d6f-4143-4d2b-b954-711db68f3ab7" />
 
-## Problèmes rencontrés:
-Mauvaise R
+
