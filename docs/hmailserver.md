@@ -41,7 +41,7 @@ imap IN CNAME mail
 @    IN MX 10 smtp.bourges.sportludique.fr.
 
 ```
-### fichier de zone : `/etc/bind/db.externe`Serveur entrant
+### fichier de zone : `/etc/bind/db.externe`
 
 ```
 $TTL 86400
