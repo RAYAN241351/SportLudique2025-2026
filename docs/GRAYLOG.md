@@ -83,3 +83,10 @@ echo -n "votre_mdp" | sha256sum
 root_password_sha2 = <hash_genere>
 root_username = admin
 ```
+
+### configuration du réseau (dans le fichier de conf trouver la ligne correspondante)
+
+```
+rest_listen_uri = http://ip_mana:9000/api/
+web_listen_uri = http://ip_mana:9000/
+```
