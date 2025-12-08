@@ -1,3 +1,6 @@
+
+<img src="https://cyberopti.com/wp-content/uploads/2024/12/graylog.webp" width="800">
+
 ## Installation et Configuration de Graylog sur Debian
 
 Cette documentation décrit les étapes pour installer et configurer Graylog sur un serveur Debian, en incluant la configuration de l'utilisateur admin et la sécurisation des mots de passe.
@@ -90,3 +93,18 @@ root_username = admin
 rest_listen_uri = http://ip_mana:9000/api/
 web_listen_uri = http://ip_mana:9000/
 ```
+
+## 5.Démarrage du serveur Graylog
+
+```
+sudo systemctl enable graylog-server
+sudo systemctl start graylog-server
+sudo systemctl status graylog-server
+```
+## 6.Connexion à l'interface Web
+
+URL : http://IP_SERVEUR:9000
+
+Login : admin
+
+Mot de passe : celui défini lors de la configuration (root_password_sha2)
