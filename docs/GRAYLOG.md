@@ -142,3 +142,12 @@ Une ligne de ce type apparaît :
 Initial admin password: <mot_de_passe>
 
 Ce mot de passe est requis uniquement pour la première connexion.
+
+### Probleme 4 : Configuration réseau et ports
+
+Par défaut, Graylog n'écoute que sur `localhost` (127.0.0.1), ce qui empêche l'accès depuis d'autres machines du réseau.  
+Pour y remédier, il faut modifier le fichier de configuration `/etc/graylog/server/server.conf` :
+
+```ini
+http_bind_address = 192.168.110.110:9000
+
