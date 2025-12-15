@@ -108,3 +108,37 @@ URL : http://IP_SERVEUR:9000
 Login : admin
 
 Mot de passe : celui défini lors de la configuration (root_password_sha2)
+
+## Porblèmes rencontrès et solutions
+
+### Problème 1 : Mot de passe Graylog invalide sur l’interface web
+
+
+Impossible de se connecter avec admin
+
+Aucun message d’erreur clair
+
+### Problème 2 : Incompréhension du password_secret
+
+Doute sur l’utilisation d’un secret généré aléatoirement.
+
+Clarification :
+
+**password_secret** n’est pas un mot de passe utilisateur
+
+Il sert à chiffrer les données sensibles stockées par Graylog
+
+Il n’a pas besoin d’être mémorisé
+
+### Problème 3 : Impossible de se connecter lors de la toute première connexion à l’interface web
+
+Lors du premier démarrage, Graylog génère un mot de passe temporaire pour l’utilisateur `admin`.
+Ce mot de passe n’est visible que dans les logs.
+
+Commande utilisée :
+sudo tail -n 50 /var/log/graylog-server/server.log
+
+Une ligne de ce type apparaît :
+Initial admin password: <mot_de_passe>
+
+Ce mot de passe est requis uniquement pour la première connexion.
