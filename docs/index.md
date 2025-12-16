@@ -15,10 +15,10 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 
 
-### Physique
-<img width="845" height="759" alt="image" src="https://github.com/user-attachments/assets/18e1b0df-a62c-4e5c-be24-e06a9d41208b" />
+### logique
+<img width="870" height="702" alt="image" src="https://github.com/user-attachments/assets/ac9ce119-634a-446c-9908-fdb85d932b2e" />
 
 
 
-### Logique
+### physique
 <img width="801" height="680" alt="image" src="https://github.com/user-attachments/assets/2b723b42-1ba0-43fa-8eaf-fa4ff8f6315d" />
