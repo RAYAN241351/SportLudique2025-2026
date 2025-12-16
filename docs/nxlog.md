@@ -80,3 +80,13 @@ SpoolDir  %LOGDIR%
     Path in => out
 </Route>
 ```
+### Points clés
+
+**Extensions** : `xm_gelf` pour GELF, xm_charconv pour encodages Windows.
+
+**Input Modules** : `im_msvistalog` pour récupérer tous les EventLogs.
+
+**Output Modules** : `om_udp ou om_tcp` avec Exec to_gelf().
+
+**Routes** : relient input → output, indispensables pour que les logs soient envoyés.
+
