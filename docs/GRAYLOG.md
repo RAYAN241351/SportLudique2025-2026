@@ -1,7 +1,7 @@
 
 <img src="https://cyberopti.com/wp-content/uploads/2024/12/graylog.webp" width="800">
 
-## Installation et Configuration de Graylog sur Debian
+## Installation et Configuration de Graylog sur Debian (graylog 7)
 
 Cette documentation décrit les étapes pour installer et configurer Graylog sur un serveur Debian, en incluant la configuration de l'utilisateur admin et la sécurisation des mots de passe.
 
@@ -48,9 +48,9 @@ sudo systemctl start mongodb
 ### Ajouter le dépôt Graylog
 
 ```
-wget https://packages.graylog2.org/repo/packages/graylog-6.3-repository_latest.deb
-sudo dpkg -i graylog-6.3-repository_latest.deb
-sudo apt update
+wget https://packages.graylog2.org/repo/packages/graylog-7.0-repository_latest.deb
+sudo dpkg -i graylog-7.0-repository_latest.deb
+sudo apt-get update
 ```
 
 ### Installer Graylog
