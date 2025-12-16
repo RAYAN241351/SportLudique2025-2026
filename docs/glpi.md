@@ -1,4 +1,5 @@
 # Installation complète de GLPI 11 sur Debian 12/13
+<img width="500" height="275" alt="image" src="https://github.com/user-attachments/assets/294694fe-3481-4a86-a8fd-d04035acc118" />
 
 Procédure d'installation de GLPI 11 avec Apache2, PHP-FPM et MariaDB.
 
@@ -283,12 +284,6 @@ Accéder à :
 ```bash
 sudo find /var/www/glpi-11 -name "install.php" -delete
 ```
-
-### 13.2 HTTPS (recommandé)
-
-* Installer un certificat (Let's Encrypt ou interne)
-* Créer un VirtualHost `:443`
-* Rediriger HTTP → HTTPS
 
 ### 13.3 Sauvegardes
 
