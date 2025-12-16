@@ -375,7 +375,3 @@ sudo systemctl reload apache2
 
 ---
 
-**Documentation créée le 16/12/2025**
-
-> Tu peux copier tout ce contenu dans un fichier `glpi_install.md`.
-> Markdown standard, sans émojis ni formatage exotique.
