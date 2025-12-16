@@ -1,0 +1,2112 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../firewall/">
+      
+      
+        <link rel="next" href="../hmailserver/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Installation complète de GLPI 11 sur Debian 12/13 - SportLudique Bourges</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-complete-de-glpi-11-sur-debian-1213" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SportLudique Bourges" class="md-header__button md-logo" aria-label="SportLudique Bourges" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SportLudique Bourges
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation complète de GLPI 11 sur Debian 12/13
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SportLudique Bourges" class="md-nav__button md-logo" aria-label="SportLudique Bourges" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SportLudique Bourges
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenue sur la documentation de Sport Ludique Bourges Année scolaire 2025-2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adressage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Addressage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRAYLOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GRAYLOG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R%C3%A9solveurDNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    installation de Unbound sous debian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activedirectory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Documentation Apache2 – Serveur Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Documentation BIND9 – Serveur DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker sur Debian – Documentation (avec erreurs rencontrées)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation complète de GLPI 11 sur Debian 12/13
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation complète de GLPI 11 sur Debian 12/13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Présentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prérequis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Prérequis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-systeme-et-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Système et réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-logiciels-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Logiciels requis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-extensions-php-requisesrecommandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Extensions PHP requises/recommandées
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mise-a-jour-du-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mise à jour du système
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-de-la-stack-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Installation de la stack LAMP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Installation de la stack LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apache2-et-mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Apache2 et MariaDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-php-fpm-et-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 PHP-FPM et extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuration-de-mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuration de MariaDB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configuration de MariaDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-securisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Sécurisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-creation-de-la-base-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Création de la base GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-telechargement-de-glpi-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Téléchargement de GLPI 11
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Téléchargement de GLPI 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-recuperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Récupération
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-organisation-et-securisation-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Organisation et sécurisation des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Organisation et sécurisation des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-configuration-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Configuration GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-donnees-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Données GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-journaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Journaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuration-des-chemins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Configuration des chemins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Configuration des chemins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-downstreamphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 downstream.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-local_definephp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 local_define.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-configuration-apache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Configuration Apache2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Configuration Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-virtualhost-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 VirtualHost GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Activation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-parametres-php-recommandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Paramètres PHP recommandés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-installation-via-linterface-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Installation via l'interface web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Installation via l&#39;interface web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comptes-par-defaut-a-modifier-immediatement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comptes par défaut (à modifier immédiatement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-post-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Post-installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Post-installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-suppression-de-linstallateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Suppression de l'installateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-sauvegardes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Sauvegardes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-recapitulatif-rapide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Récapitulatif rapide
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hmailserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Hmail server sur Windows 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nxlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXLog CE – Collecte de logs Windows vers Graylog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensense/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opensense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openssl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Openssl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPAM pour la gestion des ip : https://ipam.sio.lyceefulbert.fr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reverseproxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Proxy – Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routeur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serveur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serveur Virtual Machine + Solution RAID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unbound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C3%A9tapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place du routeur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Présentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prérequis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Prérequis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-systeme-et-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Système et réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-logiciels-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Logiciels requis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-extensions-php-requisesrecommandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Extensions PHP requises/recommandées
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mise-a-jour-du-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mise à jour du système
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-de-la-stack-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Installation de la stack LAMP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Installation de la stack LAMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apache2-et-mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Apache2 et MariaDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-php-fpm-et-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 PHP-FPM et extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuration-de-mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuration de MariaDB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configuration de MariaDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-securisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Sécurisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-creation-de-la-base-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Création de la base GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-telechargement-de-glpi-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Téléchargement de GLPI 11
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Téléchargement de GLPI 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-recuperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Récupération
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-organisation-et-securisation-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Organisation et sécurisation des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Organisation et sécurisation des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-configuration-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Configuration GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-donnees-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Données GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-journaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Journaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuration-des-chemins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Configuration des chemins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Configuration des chemins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-downstreamphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 downstream.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-local_definephp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 local_define.php
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-configuration-apache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Configuration Apache2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Configuration Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-virtualhost-glpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 VirtualHost GLPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Activation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-parametres-php-recommandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Paramètres PHP recommandés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-installation-via-linterface-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Installation via l'interface web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Installation via l&#39;interface web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étapes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comptes-par-defaut-a-modifier-immediatement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comptes par défaut (à modifier immédiatement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-post-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Post-installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Post-installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-suppression-de-linstallateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Suppression de l'installateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-sauvegardes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Sauvegardes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-recapitulatif-rapide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Récapitulatif rapide
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation-complete-de-glpi-11-sur-debian-1213">Installation complète de GLPI 11 sur Debian 12/13</h1>
+<p><img width="500" height="275" alt="image" src="https://github.com/user-attachments/assets/294694fe-3481-4a86-a8fd-d04035acc118" /></p>
+<p>Procédure d'installation de GLPI 11 avec Apache2, PHP-FPM et MariaDB.</p>
+<hr />
+<h2 id="1-presentation">1. Présentation</h2>
+<p>GLPI (Gestion Libre de Parc Informatique) est une solution web libre de gestion de parc, helpdesk et ITSM.</p>
+<p>GLPI 11 repose sur :
+- Un serveur web (Apache ou Nginx)
+- PHP (PHP-FPM recommandé)
+- Une base de données MariaDB ou MySQL</p>
+<hr />
+<h2 id="2-prerequis">2. Prérequis</h2>
+<h3 id="21-systeme-et-reseau">2.1 Système et réseau</h3>
+<ul>
+<li>Debian 12 ou 13</li>
+<li>Accès root ou sudo</li>
+<li>IP fixe ou réservation DHCP</li>
+<li>Nom DNS pointant vers le serveur GLPI</li>
+<li>Accès réseau : SSH (administration) et HTTP/HTTPS (clients)</li>
+</ul>
+<h3 id="22-logiciels-requis">2.2 Logiciels requis</h3>
+<ul>
+<li>Apache2</li>
+<li>MariaDB (≥ 10.2) ou MySQL (≥ 5.7)</li>
+<li>PHP compatible GLPI 11</li>
+</ul>
+<h3 id="23-extensions-php-requisesrecommandees">2.3 Extensions PHP requises/recommandées</h3>
+<p><code>curl</code> <code>gd</code> <code>intl</code> <code>mysqli</code> <code>session</code> <code>json</code> <code>xml</code> <code>mbstring</code> <code>zip</code> <code>bz2</code> <code>imap</code> <code>ldap</code> <code>apcu</code></p>
+<hr />
+<h2 id="3-mise-a-jour-du-systeme">3. Mise à jour du système</h2>
+<p>sudo apt update &amp;&amp; sudo apt upgrade -y</p>
+<hr />
+<h2 id="4-installation-de-la-stack-lamp">4. Installation de la stack LAMP</h2>
+<h3 id="41-apache2-et-mariadb">4.1 Apache2 et MariaDB</h3>
+<p>sudo apt install -y apache2 mariadb-server</p>
+<h3 id="42-php-fpm-et-extensions">4.2 PHP-FPM et extensions</h3>
+<p>Adapter la version PHP :
+- Debian 12 → PHP 8.2
+- Debian 13 → PHP 8.4</p>
+<p>sudo apt install -y
+php php-fpm php-mysql php-gd php-intl php-curl php-xml php-zip
+php-mbstring php-bz2 php-imap php-apcu php-ldap php-common php-json</p>
+<hr />
+<h2 id="5-configuration-de-mariadb">5. Configuration de MariaDB</h2>
+<h3 id="51-securisation">5.1 Sécurisation</h3>
+<p>sudo mysql_secure_installation</p>
+<h3 id="52-creation-de-la-base-glpi">5.2 Création de la base GLPI</h3>
+<p>sudo mysql</p>
+<p>undefined</p>
+<p>CREATE DATABASE glpi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'glpiuser'@'localhost' IDENTIFIED BY 'MotDePasseFort';
+GRANT ALL PRIVILEGES ON glpi.* TO 'glpiuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;</p>
+<hr />
+<h2 id="6-telechargement-de-glpi-11">6. Téléchargement de GLPI 11</h2>
+<h3 id="61-recuperation">6.1 Récupération</h3>
+<p>cd /tmp
+wget https://github.com/glpi-project/glpi/releases/download/11.0.0/glpi-11.0.0.tgz</p>
+<h3 id="62-installation">6.2 Installation</h3>
+<p>sudo tar xvf glpi-11.0.0.tgz -C /var/www/
+sudo mv /var/www/glpi /var/www/glpi-11
+sudo ln -s /var/www/glpi-11 /var/www/glpi</p>
+<hr />
+<h2 id="7-organisation-et-securisation-des-fichiers">7. Organisation et sécurisation des fichiers</h2>
+<h3 id="71-configuration-glpi">7.1 Configuration GLPI</h3>
+<p>sudo mkdir -p /etc/glpi
+sudo chown www-data:www-data /etc/glpi
+sudo mv /var/www/glpi/config /etc/glpi</p>
+<h3 id="72-donnees-glpi">7.2 Données GLPI</h3>
+<p>sudo mkdir -p /var/lib/glpi
+sudo mv /var/www/glpi/files /var/lib/glpi
+sudo chown -R www-data:www-data /var/lib/glpi</p>
+<h3 id="73-journaux">7.3 Journaux</h3>
+<p>sudo mkdir -p /var/log/glpi
+sudo chown www-data:www-data /var/log/glpi</p>
+<h2 id="8-configuration-des-chemins">8. Configuration des chemins</h2>
+<h3 id="81-downstreamphp">8.1 downstream.php</h3>
+<pre><code class="language-php">&lt;?php
+define('GLPI_CONFIG_DIR', '/etc/glpi/');
+if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
+    require_once GLPI_CONFIG_DIR . '/local_define.php';
+}
+</code></pre>
+<h3 id="82-local_definephp">8.2 local_define.php</h3>
+<pre><code class="language-bash">sudo nano /etc/glpi/local_define.php
+</code></pre>
+<p>Contenu :</p>
+<pre><code class="language-php">&lt;?php
+define('GLPI_VAR_DIR', '/var/lib/glpi/files');
+define('GLPI_LOG_DIR', '/var/log/glpi');
+</code></pre>
+<hr />
+<h2 id="9-permissions">9. Permissions</h2>
+<pre><code class="language-bash">sudo chown -R www-data:www-data /var/www/glpi-11
+sudo chown -R www-data:www-data /etc/glpi /var/lib/glpi /var/log/glpi
+sudo find /var/www/glpi-11 -type d -exec chmod 750 {} \;
+sudo find /var/www/glpi-11 -type f -exec chmod 640 {} \;
+</code></pre>
+<hr />
+<h2 id="10-configuration-apache2">10. Configuration Apache2</h2>
+<h3 id="101-virtualhost-glpi">10.1 VirtualHost GLPI</h3>
+<pre><code class="language-bash">sudo nano /etc/apache2/sites-available/glpi.conf
+</code></pre>
+<p>Contenu :</p>
+<pre><code class="language-apache">&lt;VirtualHost *:80&gt;
+    ServerName glpi.mondomaine.local
+    DocumentRoot /var/www/glpi/public
+
+    &lt;Directory /var/www/glpi/public&gt;
+        Require all granted
+        AllowOverride All
+        Options FollowSymlinks
+
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ index.php [QSA,L]
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/glpi-error.log
+    CustomLog ${APACHE_LOG_DIR}/glpi-access.log combined
+
+    &lt;FilesMatch &quot;\.php$&quot;&gt;
+        SetHandler &quot;proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost/&quot;
+        # Debian 13 / PHP 8.4 :
+        # SetHandler &quot;proxy:unix:/run/php/php8.4-fpm.sock|fcgi://localhost/&quot;
+    &lt;/FilesMatch&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+<h3 id="102-activation">10.2 Activation</h3>
+<pre><code class="language-bash">sudo a2enmod proxy_fcgi setenvif rewrite
+sudo a2enconf php*-fpm
+sudo a2ensite glpi.conf
+sudo systemctl reload apache2
+</code></pre>
+<hr />
+<h2 id="11-parametres-php-recommandes">11. Paramètres PHP recommandés</h2>
+<pre><code class="language-bash">sudo nano /etc/php/8.2/fpm/php.ini
+</code></pre>
+<p>Paramètres à ajuster :</p>
+<pre><code class="language-ini">memory_limit = 256M
+upload_max_filesize = 20M
+post_max_size = 20M
+date.timezone = Europe/Paris
+</code></pre>
+<p>Redémarrer PHP-FPM :</p>
+<pre><code class="language-bash">sudo systemctl restart php8.2-fpm
+</code></pre>
+<hr />
+<h2 id="12-installation-via-linterface-web">12. Installation via l'interface web</h2>
+<p>Accéder à :</p>
+<ul>
+<li><a href="http://glpi.mondomaine.local">http://glpi.mondomaine.local</a></li>
+<li>http://IP_DU_SERVEUR</li>
+</ul>
+<h3 id="etapes">Étapes</h3>
+<ol>
+<li>Langue → Français</li>
+<li>Licence GPL → Installer</li>
+<li>
+<p>Base de données :</p>
+</li>
+<li>
+<p>Hôte : <code>localhost</code></p>
+</li>
+<li>Utilisateur : <code>glpiuser</code></li>
+<li>Mot de passe : <code>MotDePasseFort</code></li>
+<li>Base : <code>glpi</code></li>
+</ol>
+<h3 id="comptes-par-defaut-a-modifier-immediatement">Comptes par défaut (à modifier immédiatement)</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Login</th>
+<th>Mot de passe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>glpi</td>
+<td>glpi</td>
+</tr>
+<tr>
+<td>Technicien</td>
+<td>tech</td>
+<td>tech</td>
+</tr>
+<tr>
+<td>Utilisateur</td>
+<td>normal</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>Lecture seule</td>
+<td>post-only</td>
+<td>post-only</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-post-installation">13. Post-installation</h2>
+<h3 id="131-suppression-de-linstallateur">13.1 Suppression de l'installateur</h3>
+<pre><code class="language-bash">sudo find /var/www/glpi-11 -name &quot;install.php&quot; -delete
+</code></pre>
+<h3 id="133-sauvegardes">13.3 Sauvegardes</h3>
+<p>Sauvegarder régulièrement :</p>
+<ul>
+<li>Base de données <code>glpi</code></li>
+<li>
+<p>Dossiers :</p>
+</li>
+<li>
+<p><code>/etc/glpi</code></p>
+</li>
+<li><code>/var/lib/glpi</code></li>
+<li><code>/var/log/glpi</code></li>
+<li>Plugins</li>
+</ul>
+<hr />
+<h2 id="14-recapitulatif-rapide">14. Récapitulatif rapide</h2>
+<pre><code class="language-bash"># Mise à jour
+sudo apt update &amp;&amp; sudo apt upgrade -y
+
+# Apache &amp; MariaDB
+sudo apt install -y apache2 mariadb-server
+
+# PHP
+sudo apt install -y \
+  php php-fpm php-mysql php-gd php-intl php-curl php-xml php-zip \
+  php-mbstring php-bz2 php-imap php-apcu php-ldap php-common php-json
+
+# Sécurisation DB
+sudo mysql_secure_installation
+
+# Base GLPI
+sudo mysql &lt;&lt;EOF
+CREATE DATABASE glpi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'glpiuser'@'localhost' IDENTIFIED BY 'MotDePasseFort';
+GRANT ALL PRIVILEGES ON glpi.* TO 'glpiuser'@'localhost';
+FLUSH PRIVILEGES;
+EOF
+
+# Téléchargement GLPI
+cd /tmp
+wget https://github.com/glpi-project/glpi/releases/download/11.0.0/glpi-11.0.0.tgz
+sudo tar xvf glpi-11.0.0.tgz -C /var/www/
+sudo mv /var/www/glpi /var/www/glpi-11
+sudo ln -s /var/www/glpi-11 /var/www/glpi
+
+# Organisation fichiers
+sudo mkdir -p /etc/glpi /var/lib/glpi /var/log/glpi
+sudo mv /var/www/glpi/config /etc/glpi
+sudo mv /var/www/glpi/files /var/lib/glpi
+sudo chown -R www-data:www-data /etc/glpi /var/lib/glpi /var/log/glpi /var/www/glpi-11
+
+# downstream.php
+cat &lt;&lt;'PHP' | sudo tee /var/www/glpi/inc/downstream.php
+&lt;?php
+define('GLPI_CONFIG_DIR', '/etc/glpi/');
+if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
+    require_once GLPI_CONFIG_DIR . '/local_define.php';
+}
+PHP
+
+# local_define.php
+cat &lt;&lt;'PHP' | sudo tee /etc/glpi/local_define.php
+&lt;?php
+define('GLPI_VAR_DIR', '/var/lib/glpi/files');
+define('GLPI_LOG_DIR', '/var/log/glpi');
+PHP
+
+# Permissions
+sudo chown -R www-data:www-data /var/www/glpi-11 /etc/glpi /var/lib/glpi /var/log/glpi
+sudo find /var/www/glpi-11 -type d -exec chmod 750 {} \;
+sudo find /var/www/glpi-11 -type f -exec chmod 640 {} \;
+
+# VirtualHost Apache (à configurer manuellement)
+sudo nano /etc/apache2/sites-available/glpi.conf
+
+# Activation
+sudo a2enmod proxy_fcgi setenvif rewrite
+sudo a2enconf php*-fpm
+sudo a2ensite glpi.conf
+sudo systemctl reload apache2
+</code></pre>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
