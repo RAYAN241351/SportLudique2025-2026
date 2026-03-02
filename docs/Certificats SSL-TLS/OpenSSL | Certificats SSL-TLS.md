@@ -35,24 +35,22 @@ openssl genrsa -des3 2048 > ~/tpssl/autorite/keys/private_ca.key
 openssl req -new -x509 -days 365 \
   -key ~/tpssl/autorite/keys/private_ca.key \
   -out ~/tpssl/autorite/certificats/ca.crt
+  -new -x509 : crée un certificat auto-signé pour la CA.
+  -days 365 : validité du certificat.
 ```
--new -x509 : crée un certificat auto-signé pour la CA.
+## Informations à renseigner lors de l’invite :
 
--days 365 : validité du certificat.
+- Country Name (FR)
 
-Informations à renseigner lors de l’invite :
+- State or Province Name
 
-Country Name (FR)
+- Locality Name
 
-State or Province Name
+- Organization Name
 
-Locality Name
+- Common Name (nom de la CA, ex: CA-Bourges)
 
-Organization Name
-
-Common Name (nom de la CA, ex: CA-Bourges)
-
-Email Address
+- Email Address
 
 Note : Ici, le certificat de la CA est signé par lui-même, mais il servira à signer les certificats des serveurs.
 
@@ -117,10 +115,12 @@ Cette méthode **évite les certificats auto-signés côté serveur**, le serveu
 ```
 sudo a2enmod ssl
 ```
+````
 /etc/ssl/monsite/
 ├── siteweb.crt       # Certificat du serveur signé par la CA
 ├── siteweb.key       # Clé privée du serveur
 └── ca.crt            # Certificat de la CA
+````
 
 ## Configuration du site sécurisé
 
