@@ -1,12 +1,18 @@
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/7a1c25a3-a246-4fc3-8360-83ab01fca063" />
+
+
+
+## Renommer le switch
+
+```
 hostname "nom_de_votre_switch"
+```
 
-<span style="color:blue">Ce texte est bleu</span>
 
+ 
+ ## Création d'un VLAN
 
-! -------------------------------------------------
-!  Création du VLAN 110 pour la gestion
-! -------------------------------------------------
-
+```
 vlan 110
     name Management
 exit
@@ -27,18 +33,19 @@ interface Vlan110
     ip address [IP_CISCO] [MASQUE]
     no shutdown
 exit
+```
 
-! -------------------------------------------------
-!  Enregistrement de la configuration
-! -------------------------------------------------
 
+## Enregistrement de la configuration
+
+```
 write memory
+```
 
-! -------------------------------------------------
-!  Configuration d’un EtherChannel en LACP (Cisco 9200L)
-! -------------------------------------------------
+## Configuration d’un EtherChannel en LACP (Cisco 9200L)
 
-interface range GigabitEthernet1/0/23 - 24
+
+```interface range GigabitEthernet1/0/23 - 24
     channel-group 1 mode active
     no shutdown
 exit
@@ -49,29 +56,32 @@ interface Port-channel1
     switchport trunk allowed vlan all
     no shutdown
 exit
+```
 
-! -------------------------------------------------
-!  Activer le routage IP sur le switch
-! -------------------------------------------------
+## Activer le routage IP sur le switch
 
+
+```
 ip routing
+```
 
-! -------------------------------------------------
-!  DHCP Relay (relais DHCP) sur VLAN 211
-! -------------------------------------------------
+## DHCP Relay (relais DHCP) sur un autre vlan
 
-! Créer la SVI pour le VLAN 211 (si non existante)
-interface Vlan211
+
+## Créer la SVI pour un vlan (si non existante)
+
+```interface Vlan211
     ip address 192.168.211.1 255.255.255.0
     ip helper-address 192.168.210.10
     no shutdown
 exit
+```
 
 
-! -------------------------------------------------
-!  Configuration de LACP (EtherChannel) sur 2 ports
-! -------------------------------------------------
+## Configuration de LACP (EtherChannel) sur 2 ports
 
+
+```
 interface range GigabitEthernet1/0/23 - 24
  switchport mode trunk
  channel-group 1 mode active
@@ -84,23 +94,25 @@ interface Port-channel1
  switchport trunk allowed vlan all
  no shutdown
 exit
+```
 
-! -------------------------------------------------
-! 🛣️ Ajouter une route par défaut
-! -------------------------------------------------
+## Ajouter une route par défaut
 
+
+```
 ip route 0.0.0.0 0.0.0.0 172.x.x.x
+```
 
-! -------------------------------------------------
-! 🔐 Comptes utilisateurs
-! -------------------------------------------------
+## Comptes utilisateurs
 
+```
 username operateur privilege 15 secret [motdepasse]
+```
 
-! -------------------------------------------------
-! 🔐 Activer SSH et accès distant
-! -------------------------------------------------
+## Activer SSH (accès distant)
 
+
+```
 ip ssh version 2
 
 line vty 0 4
@@ -110,3 +122,4 @@ line vty 0 4
 line vty 0 15
  login local
  transport input ssh
+```
