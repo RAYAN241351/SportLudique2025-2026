@@ -1,4 +1,4 @@
-# Installation complète de GLPI 11 sur Debian 12/13
+# GLPI | Gestion et Inventaire
 <img width="500" height="275" alt="image" src="https://github.com/user-attachments/assets/294694fe-3481-4a86-a8fd-d04035acc118" />
 
 Procédure d'installation de GLPI 11 avec Apache2, PHP-FPM et MariaDB.
