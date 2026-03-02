@@ -1,4 +1,4 @@
-# Reverse Proxy – Nginx
+# Nginx | Reverse Proxy
 
 <img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" width="700">
 
