@@ -1,4 +1,4 @@
-
+# Graylog | Gestion des journaux
 <img src="https://cyberopti.com/wp-content/uploads/2024/12/graylog.webp" width="800">
 
 ## Installation et Configuration de Graylog sur Debian (graylog 7)
