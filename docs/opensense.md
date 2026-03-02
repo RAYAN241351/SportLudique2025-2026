@@ -48,8 +48,8 @@ Les routes configurées dans Système → Routes → Configuration sont les suiv
 
 |Réseau destination|	Passerelle| 	Description|	Activée ou Désactivé|
 |:-|:-|:-|:-|
-|172.28.129.0/24|	Passerelle-Stormshield (192.168.18.1)|	Client|	Oui/Non (à préciser)|
-|172.28.128.0/24|	Passerelle-Stormshield (192.168.18.1)|	Serveur|	Oui/Non (à préciser)|
+|172.28.129.0/24|	Passerelle-Stormshield (192.168.18.1)|	Client|	        ✔ activée|
+|172.28.128.0/24|	Passerelle-Stormshield (192.168.18.1)|	Serveur|	✔ activée|
 |0.0.0.0/0|	Passerelle-Stormshield (192.168.18.1)|	Route par défaut|	✔ activée|
 
 
