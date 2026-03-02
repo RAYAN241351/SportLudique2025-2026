@@ -1,4 +1,4 @@
-# Docker sur Debian – Documentation (avec erreurs rencontrées)
+# Docker | Gestion de Conteneurs
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be971729-52d1-441e-a8e6-1b86d8ac5687" />
 
 ## 1. Présentation rapide
