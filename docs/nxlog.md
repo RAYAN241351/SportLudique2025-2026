@@ -1,4 +1,5 @@
 # NXLog CE – Collecte de logs Windows vers Graylog
+<img width="494" height="494" alt="image" src="https://github.com/user-attachments/assets/1700e771-e325-47cc-807d-1a531146ffc7" />
 
 ## 1. Présentation
 NXLog CE est un agent léger de collecte de logs pour Windows et Linux.  
