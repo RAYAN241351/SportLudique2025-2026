@@ -140,4 +140,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable graylog-datanode.service
 sudo systemctl start graylog-datanode.service
 ```
-Tu répètes ces étapes sur chaque nœud Data Node de ton cluster, **en réutilisant le même** ``password_secret`
+Tu répètes ces étapes sur chaque nœud Data Node de ton cluster, **en réutilisant le même password_secret**
