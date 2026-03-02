@@ -31,12 +31,14 @@ openssl genrsa -des3 2048 > ~/tpssl/autorite/keys/private_ca.key
 ```
 
 ## Création du certificat de la CA
+
 ```
 openssl req -new -x509 -days 365 \
   -key ~/tpssl/autorite/keys/private_ca.key \
   -out ~/tpssl/autorite/certificats/ca.crt
   -new -x509 : crée un certificat auto-signé pour la CA.
   -days 365 : validité du certificat.
+
 ```
 ## Informations à renseigner lors de l’invite :
 
