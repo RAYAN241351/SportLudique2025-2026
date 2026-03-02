@@ -1,4 +1,4 @@
-# 🧱 Documentation Apache2 – Serveur Web
+#  Apache2 – Serveur Web
 <img width="620" height="485" alt="image" src="https://github.com/user-attachments/assets/8cfce6b7-de11-4b7f-85bc-30f5cd990973" />
 
 ## Introduction à Apache2
