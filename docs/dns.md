@@ -1,4 +1,4 @@
-# 🧱 Documentation BIND9 – Serveur DNS
+# BIND9 – Serveur DNS
 
 ## Introduction à BIND9
 
