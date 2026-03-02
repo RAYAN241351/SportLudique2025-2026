@@ -128,16 +128,10 @@ ports: "3000:3000"
 
 - docker volume create portainer_data
 
-```````````````````````
-docker run -d
--p 8000:8000 -p 9000:9000
---name=portainer
---restart=always
--v /var/run/docker.sock:/var/run/docker.sock
--v portainer_data:/data
-portainer/portainer-ce:latest
 
-````````````````````````
+-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+
 Interface accessible sur [**http://IP_DEBIAN:9000**](http://IP_DEBIAN:9000) (création d’un compte admin lors du premier accès).
 
 ### 6.2. Message “instance programmée à des fins de sécurité”
