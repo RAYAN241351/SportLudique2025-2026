@@ -1,4 +1,6 @@
-## Connexion au firewall
+
+
+# StormShield | Pare-feu
 <img width="1040" height="549" alt="image" src="https://github.com/user-attachments/assets/b4efca76-f72f-4a8c-aef4-7db5fde31154" />
 
 Pour accéder à l'interface d'administration du pare-feu **SNS**, il est indispensable de connecter la machine cliente à une **interface interne (port LAN)**.
