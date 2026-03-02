@@ -9,7 +9,7 @@ Par opposition, la **virtualisation** avec un hyperviseur (Proxmox, VMware, etc.
 ---
 
 ## 2. Installation de Docker sur Debian
-https://rayan241351.github.io/SportLudique2025-2026/
+
 ### 2.1. Pré‑requis
 - sudo apt update
 - sudo apt install ca-certificates curl gnupg lsb-release -y
@@ -20,10 +20,7 @@ https://rayan241351.github.io/SportLudique2025-2026/
 - sudo install -m 0755 -d /usr/share/keyrings
 - curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
 - sudo chmod a+r /usr/share/keyrings/docker.gpg
-
--echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] 
-https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable"| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 
 ### 2.3. Installation de Docker Engine + plugin Compose
@@ -38,12 +35,14 @@ https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
 
 ### 3.1. Structure de projet
-
+````
 - mkdir ~/node-docker-demo
 - cd ~/node-docker-demo
 - npm init -y
 - npm install
+````
 **Créer `app.js` :**
+``````
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -57,8 +56,9 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
 console.log(Server running on http://localhost:${port});
 });
-
+``````
 **Créer `Dockerfile` :**
+````
 FROM node:18-alpine
 
 WORKDIR /usr/src/app
@@ -71,7 +71,7 @@ COPY . .
 EXPOSE 3000
 
 CMD ["node", "app.js"]
-
+`````
 
 ### 3.2. Fichier `docker-compose.yml` minimal
 ````````````
@@ -128,17 +128,17 @@ ports: "3000:3000"
 
 - docker volume create portainer_data
 
-``docker run -d
+``
+docker run -d
 -p 8000:8000 -p 9000:9000
 --name=portainer
 --restart=always
 -v /var/run/docker.sock:/var/run/docker.sock
 -v portainer_data:/data
 portainer/portainer-ce:latest
+
 ``
 Interface accessible sur [**http://IP_DEBIAN:9000**](http://IP_DEBIAN:9000) (création d’un compte admin lors du premier accès).
-
----
 
 ### 6.2. Message “instance programmée à des fins de sécurité”
 
@@ -147,9 +147,6 @@ Portainer coupe l’assistant de première installation après un délai pour é
 **Pour le réactiver :**
 - docker stop portainer
 - docker start portainer
-
-
----
 
 ## 7. Erreurs rencontrées et corrections
 
@@ -174,8 +171,6 @@ Le dépôt Docker est configuré avec `signed-by=/usr/share/keyrings/docker.gpg`
   Vérifier aussi que `/etc/apt/sources.list.d/docker.list` contient bien une ligne de ce type :
   deb [arch=amd64 signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian trixie stable
   
-
----
 
 ### 7.2. Message Portainer : “Votre instance Portainer est programmée à des fins de sécurité”
 
