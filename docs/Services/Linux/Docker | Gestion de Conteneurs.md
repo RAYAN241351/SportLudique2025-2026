@@ -74,15 +74,15 @@ CMD ["node", "app.js"]
 
 
 ### 3.2. Fichier `docker-compose.yml` minimal
-
+````````````
 version: "3"
 services:
 app:
 build:
 context: .
 ports:
-- "3000:3000"
-
+"3000:3000"
+`````````````
 ### 3.3. Lancement
 
 - docker compose up -d # lancement en arrière-plan
