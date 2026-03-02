@@ -35,12 +35,12 @@ Par opposition, la **virtualisation** avec un hyperviseur (Proxmox, VMware, etc.
 
 
 ### 3.1. Structure de projet
-````
+
 - mkdir ~/node-docker-demo
 - cd ~/node-docker-demo
 - npm init -y
 - npm install
-````
+
 **Créer `app.js` :**
 ``````
 const http = require('http');
