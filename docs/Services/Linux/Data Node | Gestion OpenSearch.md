@@ -4,7 +4,6 @@ wget https://packages.graylog2.org/repo/packages/graylog-7.0-repository_latest.d
 sudo dpkg -i graylog-7.0-repository_latest.deb
 sudo apt-get update
 sudo apt-get install graylog-datanode
-
 ```````
 ## Générer un ``password_secret`` (chaîne aléatoire longue) :
 ````
