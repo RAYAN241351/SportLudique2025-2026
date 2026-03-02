@@ -56,14 +56,14 @@ openssl req -new -x509 -days 365 \
 
 Note : Ici, le certificat de la CA est signé par lui-même, mais il servira à signer les certificats des serveurs.
 
-## Création du 
+## Création du certificat serveur via la CA 
 
     La clé privée de la CA reste sur la VM CA.
 
     Tous les certificats serveurs doivent être signés par cette CA pour être reconnus comme valides par le reverse proxy ou les clients internes.
 
     Cette méthode évite les certificats auto-signés côté serveur, le serveur web utilise un certificat signé par la CA interne.
-certificat serveur via la CA
+    
 ### géneration de la clé privée du serveur:
 ```
 openssl genrsa 2048 > ~/tpssl/siteweb/keys/siteweb.key
