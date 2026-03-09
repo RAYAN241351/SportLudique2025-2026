@@ -9,3 +9,8 @@ Appuyer sur le **bouton RESET** à l'aide d'un **trombone** afin de reinitialise
 <img width="1433" height="714" alt="image" src="https://github.com/user-attachments/assets/f19319f3-1bf2-407f-b25d-d5ff28469f1a" />
 Dans **Basic Settings > Wireless > SSID Broadcast**, changez le SSID Broadcast de Enable en Disabled.
 **Explication:** quand le **SSID n'est plus diffusé**, il **disparaît des listes WiFi automatiques**, mais on peut **encore s'y connecter manuellement en tapant exactement son nom + mot de passe**. C'est juste moins visible, pas sécurisé.
+
+## Configuration ip 
+Dans **Basic Settings > LAN**, il est possible de mettre l'ip de son choix.
+
+**Attention**: en changeant l'adresse ip vous ne serait plus sur la meme plage ip que l'équipement, vous serez donc déconnecter.
