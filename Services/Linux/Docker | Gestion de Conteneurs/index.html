@@ -1,0 +1,1833 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Data%20Node%20%7C%20Gestion%20OpenSearch/">
+      
+      
+        <link rel="next" href="../GLPI%20%7C%20Gestion%20et%20Inventaire/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Docker | Gestion de Conteneurs - SportLudique Bourges</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker-gestion-de-conteneurs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SportLudique Bourges" class="md-header__button md-logo" aria-label="SportLudique Bourges" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SportLudique Bourges
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker | Gestion de Conteneurs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SportLudique Bourges" class="md-nav__button md-logo" aria-label="SportLudique Bourges" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SportLudique Bourges
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenue sur la documentation de Sport Ludique Bourges Année scolaire 2025-2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificats SSL TLS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Certificats SSL TLS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Certificats%20SSL-TLS/OpenSSL%20%7C%20Certificats%20SSL-TLS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSL | Certificats SSL-TLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation des équipements et configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Préparation des équipements et configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pr%C3%A9paration%20des%20%C3%A9quipements%20et%20configuration/Accesspoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration et mise en place de l'access point DWL-3200AP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pr%C3%A9paration%20des%20%C3%A9quipements%20et%20configuration/Routeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routeur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pr%C3%A9paration%20des%20%C3%A9quipements%20et%20configuration/Switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autres
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Autres
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Autres/OpnSense%20%7C%20Pare-Feu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpnSense | Pare Feu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Autres/Proxmox%20%7C%20Hyperviseur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox | Hyperviseur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Autres/StormShield%20%7C%20Pare-feu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    StormShield | Pare-feu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apache2%20%7C%20Serveur%20Web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2 | Serveur Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BIND9%20%7C%20Serveur%20DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIND9 – Serveur DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Node%20%7C%20Gestion%20OpenSearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Node | Gestion OpenSearch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker | Gestion de Conteneurs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker | Gestion de Conteneurs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-presentation-rapide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Présentation rapide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-de-docker-sur-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation de Docker sur Debian
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation de Docker sur Debian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Pré‑requis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ajout-du-depot-officiel-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Ajout du dépôt officiel Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-installation-de-docker-engine-plugin-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Installation de Docker Engine + plugin Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-structure-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Structure de projet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-fichier-docker-composeyml-minimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Fichier docker-compose.yml minimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Lancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-notions-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Notions importantes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Notions importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-mappage-de-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Mappage de ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-volumes-persistance-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Volumes (persistance des données)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-commandes-docker-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Commandes Docker de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-portainer-ui-web-pour-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Portainer (UI Web pour Docker)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Portainer (UI Web pour Docker)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-deploiement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Déploiement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-message-instance-programmee-a-des-fins-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Message “instance programmée à des fins de sécurité”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-erreurs-rencontrees-et-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Erreurs rencontrées et corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Erreurs rencontrées et corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-erreur-docker-apt-failed-to-parse-keyring-usrsharekeyringsdockergpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Erreur Docker APT : Failed to parse keyring "/usr/share/keyrings/docker.gpg"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-message-portainer-votre-instance-portainer-est-programmee-a-des-fins-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Message Portainer : “Votre instance Portainer est programmée à des fins de sécurité”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLPI%20%7C%20Gestion%20et%20Inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GLPI | Gestion et Inventaire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Graylog%20%7C%20Gestion%20des%20journaux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graylog | Gestion des journaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Nginx%20%7C%20Reverse%20Proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nginx | Reverse Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unbound%20%7C%20R%C3%A9solveur%20DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unbound | Résolveur DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/ActiveDirectory%20%7C%20Services%20d%27Annuaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveDirectory | Services d'Annuaire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/HmailServer%20%7C%20Serveur%20de%20Mail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HmailServer | Serveur de Mail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/NXLog%20CE%20%E2%80%93%20Collecte%20de%20logs%20Windows%20vers%20Graylog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXLog CE – Collecte de logs Windows vers Graylog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-presentation-rapide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Présentation rapide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installation-de-docker-sur-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation de Docker sur Debian
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation de Docker sur Debian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Pré‑requis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ajout-du-depot-officiel-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Ajout du dépôt officiel Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-installation-de-docker-engine-plugin-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Installation de Docker Engine + plugin Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-structure-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Structure de projet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-fichier-docker-composeyml-minimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Fichier docker-compose.yml minimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Lancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-notions-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Notions importantes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Notions importantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-mappage-de-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Mappage de ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-volumes-persistance-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Volumes (persistance des données)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-commandes-docker-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Commandes Docker de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-portainer-ui-web-pour-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Portainer (UI Web pour Docker)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Portainer (UI Web pour Docker)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-deploiement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Déploiement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-message-instance-programmee-a-des-fins-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Message “instance programmée à des fins de sécurité”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-erreurs-rencontrees-et-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Erreurs rencontrées et corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Erreurs rencontrées et corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-erreur-docker-apt-failed-to-parse-keyring-usrsharekeyringsdockergpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Erreur Docker APT : Failed to parse keyring "/usr/share/keyrings/docker.gpg"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-message-portainer-votre-instance-portainer-est-programmee-a-des-fins-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Message Portainer : “Votre instance Portainer est programmée à des fins de sécurité”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="docker-gestion-de-conteneurs">Docker | Gestion de Conteneurs</h1>
+<p><img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be971729-52d1-441e-a8e6-1b86d8ac5687" /></p>
+<h2 id="1-presentation-rapide">1. Présentation rapide</h2>
+<p>Docker permet de lancer des applications dans des <strong>conteneurs légers</strong>, isolés du système hôte, tout en partageant le même noyau que la machine.<br />
+Par opposition, la <strong>virtualisation</strong> avec un hyperviseur (Proxmox, VMware, etc.) fait tourner des VM complètes, chacune avec son OS, ce qui consomme plus de ressources <strong>CPU/RAM/stockage</strong>.</p>
+<hr />
+<h2 id="2-installation-de-docker-sur-debian">2. Installation de Docker sur Debian</h2>
+<h3 id="21-prerequis">2.1. Pré‑requis</h3>
+<ul>
+<li>sudo apt update</li>
+<li>sudo apt install ca-certificates curl gnupg lsb-release -y</li>
+</ul>
+<h3 id="22-ajout-du-depot-officiel-docker">2.2. Ajout du dépôt officiel Docker</h3>
+<ul>
+<li>sudo install -m 0755 -d /usr/share/keyrings</li>
+<li>curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg</li>
+<li>sudo chmod a+r /usr/share/keyrings/docker.gpg
+-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable"| sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</li>
+</ul>
+<h3 id="23-installation-de-docker-engine-plugin-compose">2.3. Installation de Docker Engine + plugin Compose</h3>
+<ul>
+<li>sudo apt update</li>
+<li>sudo apt install docker-ce docker-ce-cli containerd.io</li>
+<li>
+<p>docker-buildx-plugin docker-compose-plugin -y</p>
+</li>
+<li>
+<p>docker --version</p>
+</li>
+<li>docker compose version</li>
+<li>sudo systemctl enable --now docker</li>
+</ul>
+<h3 id="31-structure-de-projet">3.1. Structure de projet</h3>
+<ul>
+<li>mkdir ~/node-docker-demo</li>
+<li>cd ~/node-docker-demo</li>
+<li>npm init -y</li>
+<li>npm install</li>
+</ul>
+<p><strong>Créer <code>app.js</code> :</strong></p>
+<pre><code>const http = require('http');
+
+const server = http.createServer((req, res) =&gt; {
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello, Docker!\n');
+});
+
+const port = process.env.PORT || 3000;
+
+server.listen(port, () =&gt; {
+console.log(Server running on http://localhost:${port});
+});
+</code></pre>
+<p><strong>Créer <code>Dockerfile</code> :</strong>
+````
+FROM node:18-alpine</p>
+<p>WORKDIR /usr/src/app</p>
+<p>COPY package*.json ./
+RUN npm install</p>
+<p>COPY . .</p>
+<p>EXPOSE 3000</p>
+<p>CMD ["node", "app.js"]
+`````</p>
+<h3 id="32-fichier-docker-composeyml-minimal">3.2. Fichier <code>docker-compose.yml</code> minimal</h3>
+<p>````````````
+version: "3"
+services:
+app:
+build:
+context: .
+ports:
+"3000:3000"
+`````````````</p>
+<h3 id="33-lancement">3.3. Lancement</h3>
+<ul>
+<li>docker compose up -d # lancement en arrière-plan</li>
+<li>docker compose ps # état des conteneurs</li>
+<li>docker compose down # arrêt + suppression des conteneurs</li>
+</ul>
+<p>L’application est ensuite accessible sur <a href="http://IP_DEBIAN:3000"><strong>http://IP_DEBIAN:3000</strong></a>.</p>
+<h2 id="4-notions-importantes">4. Notions importantes</h2>
+<h3 id="41-mappage-de-ports">4.1. Mappage de ports</h3>
+<p>Dans <code>docker-compose.yml</code> :
+ports: "3000:3000"</p>
+<ul>
+<li>1er nombre : port <strong>hôte</strong>  </li>
+<li>2e nombre : port <strong>conteneur</strong></li>
+</ul>
+<p><strong>Exemples :</strong><br />
+- <code>8080:80</code> → http://IP:8080 pointe vers le port 80 du conteneur (classique pour Nginx/Apache).<br />
+- <code>0:3000</code> ou <code>3000</code> → Docker choisit un port dispo sur l’hôte, consultable avec <code>docker compose ps</code>.</p>
+<hr />
+<h3 id="42-volumes-persistance-des-donnees">4.2. Volumes (persistance des données)</h3>
+<p><strong>Exemple simple en ligne de commande :</strong></p>
+<h2 id="5-commandes-docker-de-base">5. Commandes Docker de base</h2>
+<ul>
+<li><code>docker pull &lt;image&gt;</code> : Télécharger une image (ex. <code>docker pull nginx</code>)</li>
+<li><code>docker images</code> : Lister les images locales</li>
+<li><code>docker ps</code> / <code>docker ps -a</code> : Lister conteneurs actifs / tous les conteneurs</li>
+<li><code>docker run -d -p 8080:80 nginx</code> : Lancer Nginx en arrière‑plan (accessible sur http://IP:8080)</li>
+<li><code>docker exec -it &lt;container&gt; /bin/bash</code> : Ouvrir un shell dans un conteneur</li>
+<li><code>docker stop &lt;container&gt;</code> / <code>docker rm &lt;container&gt;</code> : Arrêter / supprimer un conteneur</li>
+<li><code>docker rmi &lt;image&gt;</code> : Supprimer une image</li>
+<li><code>docker network ls</code> / <code>docker volume ls</code> : Lister réseaux et volumes</li>
+</ul>
+<h2 id="6-portainer-ui-web-pour-docker">6. Portainer (UI Web pour Docker)</h2>
+<h3 id="61-deploiement">6.1. Déploiement</h3>
+<ul>
+<li>
+<p>docker volume create portainer_data</p>
+</li>
+<li>
+<p>docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest</p>
+</li>
+</ul>
+<p>Interface accessible sur <a href="http://IP_DEBIAN:9000"><strong>http://IP_DEBIAN:9000</strong></a> (création d’un compte admin lors du premier accès).</p>
+<h3 id="62-message-instance-programmee-a-des-fins-de-securite">6.2. Message “instance programmée à des fins de sécurité”</h3>
+<p>Portainer coupe l’assistant de première installation après un délai pour éviter une prise de contrôle non souhaitée.</p>
+<p><strong>Pour le réactiver :</strong>
+- docker stop portainer
+- docker start portainer</p>
+<h2 id="7-erreurs-rencontrees-et-corrections">7. Erreurs rencontrées et corrections</h2>
+<h3 id="71-erreur-docker-apt-failed-to-parse-keyring-usrsharekeyringsdockergpg">7.1. Erreur Docker APT : Failed to parse keyring "/usr/share/keyrings/docker.gpg"</h3>
+<p><strong>Symptôme :</strong><br />
+<code>apt update</code> affiche :Error: Failed to parse keyring "/usr/share/keyrings/docker.gpg" – No such file or directory
+Le dépôt https://download.docker.com/linux/debian n’est pas signé.`</p>
+<p><strong>Cause :</strong><br />
+Le dépôt Docker est configuré avec <code>signed-by=/usr/share/keyrings/docker.gpg</code> mais ce fichier <strong>n’existe pas</strong> (clé GPG non ajoutée).</p>
+<p><strong>Correction :</strong>
+- <strong>sudo install -m 0755 -d /usr/share/keyrings</strong></p>
+<ul>
+<li>
+<p><strong>curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg</strong></p>
+</li>
+<li>
+<p><strong>sudo chmod a+r /usr/share/keyrings/docker.gpg</strong></p>
+</li>
+<li>
+<p><strong>sudo apt update</strong>
+  Vérifier aussi que <code>/etc/apt/sources.list.d/docker.list</code> contient bien une ligne de ce type :
+  deb [arch=amd64 signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian trixie stable</p>
+</li>
+</ul>
+<h3 id="72-message-portainer-votre-instance-portainer-est-programmee-a-des-fins-de-securite">7.2. Message Portainer : “Votre instance Portainer est programmée à des fins de sécurité”</h3>
+<p><strong>Symptôme :</strong><br />
+Après l’installation, Portainer affiche un message indiquant que l’instance a expiré pour des raisons de sécurité et qu’il faut la redémarrer.</p>
+<p><strong>Cause :</strong><br />
+L’assistant de configuration initial (création de l’utilisateur admin) <strong>n’a pas été terminé dans le délai imparti</strong>.</p>
+<p><strong>Correction :</strong>
+- docker stop portainer
+- docker start portainer
+<strong>puis se connecter immédiatement sur http://IP_machine:9000 et terminer l’assistant</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
