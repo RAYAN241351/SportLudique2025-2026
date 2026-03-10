@@ -16,7 +16,8 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 
 ### logique
-<img width="870" height="702" alt="image" src="https://github.com/user-attachments/assets/ac9ce119-634a-446c-9908-fdb85d932b2e" />
+<img width="956" height="773" alt="Capture d’écran du 2026-03-10 11-07-05" src="https://github.com/user-attachments/assets/5c90deb2-ccbc-448d-b971-83fb12198bc2" />
+
 
 
 
