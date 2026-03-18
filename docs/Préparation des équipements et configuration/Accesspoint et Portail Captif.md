@@ -1,4 +1,4 @@
-# Configuration et mise en place de l'access point DWL-3200AP 
+# Configuration et mise en place de l'access point DWL-3200AP et du Portail Captif 
 <img width="1664" height="936" alt="image" src="https://github.com/user-attachments/assets/9bc470c7-2d3b-447b-a42e-e333d9eaeb3d" />
 
 ## Reinitialisation du DWL-3200AP
