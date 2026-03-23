@@ -16,7 +16,8 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 
 ### logique
-<img width="956" height="773" alt="Capture d’écran du 2026-03-10 11-07-05" src="https://github.com/user-attachments/assets/5c90deb2-ccbc-448d-b971-83fb12198bc2" />
+<img width="950" height="785" alt="réseau drawio" src="https://github.com/user-attachments/assets/a73f7596-961b-429c-9c9f-5bfd3557ee66" />
+
 
 
 
