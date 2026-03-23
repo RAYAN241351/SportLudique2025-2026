@@ -16,7 +16,7 @@ Cette documentation repertorie toutes les modifications, les choix entrepris, ai
 
 
 ### logique
-<img width="950" height="846" alt="réseau drawio" src="https://github.com/user-attachments/assets/e2962e77-2ba4-417c-a218-5b3870148c82" />
+<img width="937" height="846" alt="Diagramme sans nom drawio" src="https://github.com/user-attachments/assets/65faf994-921a-4775-b370-0d2891229530" />
 
 
 
