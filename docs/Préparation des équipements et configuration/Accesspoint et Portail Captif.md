@@ -61,3 +61,9 @@ nous pouvons aussi personnaliser les champs supplémentaires tels que e-mail ou 
 <img width="899" height="879" alt="image" src="https://github.com/user-attachments/assets/f1934c2d-f272-4da0-8aa1-b2c388d18e70" />
 
 Pour finir dans l'onglet **portail captif** il faut associer le profil du portail captif aux interfaces réseau concernées 
+
+## Règles de pare-feu
+
+Il est nécessaire de rédiriger les personne se connectant via la Borne vers le portails captif, pour cela il faut mettre en place certaine règles de pare-feu.
+
+<img width="1622" height="634" alt="image" src="https://github.com/user-attachments/assets/b3f714d6-505f-40b2-a580-3edc4370dca3" />
