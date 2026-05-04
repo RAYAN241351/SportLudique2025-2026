@@ -66,4 +66,9 @@ Pour finir dans l'onglet **portail captif** il faut associer le profil du portai
 
 Il est nécessaire de rédiriger les personne se connectant via la Borne vers le portails captif, pour cela il faut mettre en place certaine règles de pare-feu.
 
-<img width="1622" height="634" alt="image" src="https://github.com/user-attachments/assets/b3f714d6-505f-40b2-a580-3edc4370dca3" />
+<img width="1176" height="119" alt="image" src="https://github.com/user-attachments/assets/99aa1c3a-b318-40f9-bd34-ac4659204b4f" />
+
+règle 7 : autorise le réseau de la borne wifi a descendre vers le resolveur DNS
+règle 8 : Les utilisateurs non authentifiés du réseau peuvent accéder à Internet en HTTP/HTTPS pour atteindre le portail captif.
+règle 9 : Les machines de la du réseau wifi peuvent accéder à Internet en HTTP et HTTPS.
+
