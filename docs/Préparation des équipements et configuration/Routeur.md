@@ -70,4 +70,166 @@
 ## Activer le NAT avec surcharge (PAT)
 - *ip nat inside source list 1 interface GigabitEthernet0/0 overload*
 
+## Mise en place de HSRP
 
+### Étape 1 : Vérifier les prérequis
+
+- Vérifier que les deux routeurs supportent HSRP (modèle + version IOS).
+- Vérifier que les interfaces reliées au VLAN HSRP sont opérationnelles.
+
+```bash
+show version
+show ip interface brief
+```
+
+---
+
+### Étape 2 : Configurer les adresses IP des interfaces
+
+Sur **chaque routeur**, configurer l’interface (ou sous‑interface) qui porte le VLAN où HSRP sera actif (ex. VLAN 219) :
+
+```bash
+configure terminal
+interface GigabitEthernet0/1.219
+ encapsulation dot1Q 219
+ ip address <IP_routeur> <masque>
+ no shutdown
+exit
+```
+
+> Objectif : chaque routeur a sa propre IP dans le même réseau (par exemple `.252` et `.253`).
+
+---
+
+### Étape 3 : Activer HSRP et définir l’IP virtuelle
+
+Sur **les deux routeurs**, sur l’interface du VLAN HSRP :
+
+```bash
+interface GigabitEthernet0/1.219
+ standby 1 ip <IP_virtuelle>
+```
+
+- `1` = numéro de groupe HSRP.
+- `<IP_virtuelle>` = IP de passerelle commune utilisée par les clients (ex. `.254`).
+
+---
+
+### Étape 4 : Définir les priorités et la préemption
+
+Sur le **routeur qui doit être actif** par défaut (ex. Fibre) :
+
+```bash
+interface GigabitEthernet0/1.219
+ standby 1 priority 110
+ standby 1 preempt
+```
+
+Sur le **routeur standby** (ex. ADSL) :
+
+```bash
+interface GigabitEthernet0/1.219
+ standby 1 priority 100
+ standby 1 preempt
+```
+
+- La priorité la plus haute devient **Active**.
+- La commande `preempt` permet au routeur prioritaire de **reprendre** le rôle actif lorsqu’il redevient disponible.
+
+---
+
+### Étape 5 : Vérifier l’état HSRP
+
+Sur chaque routeur :
+
+```bash
+show standby brief
+show standby interface GigabitEthernet0/1.219
+```
+
+Vérifier que :
+
+- un routeur est en état **Active** ;
+- l’autre en état **Standby** ;
+- l’IP virtuelle est correcte.
+
+---
+
+### Étape 6 : Vérifier la route par défaut et le NAT
+
+Sur chaque routeur, vérifier que la sortie vers Internet est fonctionnelle :
+
+```bash
+show run | include ip route 0.0.0.0
+```
+
+Exemple de configuration (si besoin) :
+
+```bash
+ip route 0.0.0.0 0.0.0.0 <next-hop_FAI>
+```
+
+NAT (exemple simple) :
+
+```bash
+access-list 1 permit <réseau_interne> <wildcard>
+ip nat inside source list 1 interface <interface_WAN> overload
+```
+
+Marquer les interfaces :
+
+```bash
+interface <LAN_HSRP>
+ ip nat inside
+
+interface <WAN>
+ ip nat outside
+```
+
+---
+
+### Étape 7 : Tester le fonctionnement normal
+
+Depuis un poste client (ou un routeur interne) dont la passerelle est **l’IP virtuelle** :
+
+- Ping vers la passerelle virtuelle (`ping <IP_virtuelle>`).
+- Ping vers une adresse Internet / site externe.
+- Vérifier qu’en fonctionnement nominal, c’est bien le routeur prioritaire qui est **Active** (`show standby brief`).
+
+---
+
+### Étape 8 : Tester la bascule HSRP
+
+1. Sur le routeur **actif**, simuler une panne de l’interface HSRP :
+
+```bash
+interface GigabitEthernet0/1.219
+ shutdown
+```
+
+2. Vérifier :
+
+   - que l’autre routeur passe en **Active** (`show standby brief`) ;
+   - que les pings / la navigation Internet continuent à fonctionner depuis les clients.
+
+3. Rétablir l’interface sur le routeur prioritaire :
+
+```bash
+interface GigabitEthernet0/1.219
+ no shutdown
+show standby brief
+```
+
+Vérifier qu’il redevient **Active** grâce à la préemption.
+
+---
+
+### Étape 9 : Sauvegarder la configuration
+
+Sur chaque routeur :
+
+```bash
+write memory
+# ou
+copy running-config startup-config
+```
